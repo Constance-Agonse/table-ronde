@@ -1,4 +1,4 @@
-require("./config/mongodb");
+require("./config/mongo");
 
 var createError = require('http-errors');
 var express = require('express');
