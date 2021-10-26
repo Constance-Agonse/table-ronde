@@ -4,8 +4,12 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+<<<<<<< HEAD
     "dev": "nodemon ./bin/www -e .hbs,.js",
     "seed:skills": "node ./seeds/Skills.js"
+=======
+    "dev": "nodemon ./bin/www -e .hbs,.js"
+>>>>>>> e29e263c1942a500ec272fd48dbffcd7fb2b0d84
   },
 
   "dependencies": {
