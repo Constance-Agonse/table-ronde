@@ -8,7 +8,7 @@ const SkillSchema = new Schema({
     },
     level: {
         type: String,
-        enum: ["beginner", "elementary", "intermediate", "upper intermediate", "advanced", "expert"],
+        enum: ["starter", "elementary", "intermediate", "advanced", "expert"],
     },
     category: {
         type: String,
