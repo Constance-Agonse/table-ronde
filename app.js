@@ -48,7 +48,7 @@ app.use((req, res, next) => {
     phone : "12",
     password :"multipass",
     rates : 2,
-    _id: '6177cb972a9feb76b65688da',
+    _id: '617867836b38bde79b10bc55',
     skills : "6177fee71b747cb8f07883a4"
   }
   next()
@@ -59,6 +59,7 @@ app.use((req, res, next) => {
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const mumuRouter =require('./routes/profileRoutes/mumuRoute')
+const profileRouter = require('./routes/profileRoutes/profile')
 
 
 
@@ -69,6 +70,7 @@ app.use('/profile', mumuRouter);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/profile', profileRouter);
 app.use('/profile/skills', userSkillRouter);
 app.use('/', require('./routes/profileRoutes/previousExchanges'))
 
