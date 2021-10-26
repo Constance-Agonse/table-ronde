@@ -26,7 +26,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(() => {
+// INITIALIZE SESSION
+app.use(
+  session({
+    secret: "ASecretStringThatSouldBeHARDTOGUESS/CRACK",
+    saveUninitialized: true,
+    resave: true,
+  })
+);
+
+app.use((req, res, next) => {
   req.session.currentUser = {
     name : "Joe",
     nickname: "SuperJoe",
@@ -37,6 +46,7 @@ app.use(() => {
     _id: '6177fee85ed88f6076b5372e',
     skills : "6177fee71b747cb8f07883a4"
   }
+  next()
 })
 
 
@@ -45,20 +55,13 @@ app.use(() => {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 // app.use('../routes/profileRoutes/userSkills.js', userSkillRouter);
+app.use('/', require('./routes/profileRoutes/previousExchanges'))
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// INITIALIZE SESSION
-app.use(
-  session({
-    secret: "ASecretStringThatSouldBeHARDTOGUESS/CRACK",
-    saveUninitialized: true,
-    resave: true,
-  })
-);
 
 // FLASH MESSAGES
 // enable "flash messaging" system

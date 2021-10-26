@@ -1,11 +1,11 @@
-<h1>Welcome to your previous exchange Flo :blush:</h1>
+<h1>Welcome to your previous exchange Flo </h1>
 
 <div class="hbsChangingPage">
     <div class="coursDonne">
         <div class="champData">
-            {{#each exchanges}}
-                <p class="activity">Activity : {{this.skillsName}} </p>
-                <p class="student">Student : {{this.student}} </p>
+            {{#each isProf}}
+                <p class="activity">Activity : {{this.skillsName.name}} </p>
+                <p class="student">Student : {{this.student.name}} </p>
             {{/each}}
         </div>
     </div>

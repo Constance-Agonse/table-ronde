@@ -1,5 +1,4 @@
-const { router } = require("./../../app");
-const router = new express.Router(); //besoin meme si il y a celui d'en haut ?
+const router = require('express').Router(); //besoin meme si il y a celui d'en haut ?
 
 const UsersModel = require("./../../models/Users");
 const SkillsModel = require("./../../models/Skills");
@@ -18,13 +17,16 @@ router.get("/profile/:id/previousCourses", async (req, res, next) => {
     }
 })
 
-router.get('/profile/previousCourses' ,async (req, res, next) => {
+router.get('/profile/previousCourses' , async (req, res, next) => {
     try {
         const user = await UsersModel.findById(req.session.currentUser._id)
-        const isProf = await ExchangesModel.find({teacher: user._id}).populate('student')
+        const isProf = await ExchangesModel.find({teacher: user._id}).populate('student skillsName')
         // Array of object
         console.log(user)
+        res.render('profileViews/previousExchanges', {isProf})
     } catch(err) {
         next(err)
     }
 })
+
+module.exports = router
