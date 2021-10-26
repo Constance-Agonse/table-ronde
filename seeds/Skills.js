@@ -37,6 +37,7 @@ skillModel
     .then(() => {
         skillModel.create(testSkill).then(() => {
             console.log('Skills are added');
+            process.exit();
         })
     })
     .catch((err) => console.log("err", err));

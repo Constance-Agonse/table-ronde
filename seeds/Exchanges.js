@@ -1,5 +1,5 @@
 require("dotenv").config();
-require("./../../config/mongo.js");
+require("./../config/mongo.js");
 
 const userModel = require("../models/Users.js");
 const exchangeModel = require("./../models/Exchanges");
@@ -21,7 +21,7 @@ const exchangeSeed = [
         exchangeSeed.forEach((el) => {
             el.teacher = user[Math.floor(Math.random() * user.length)]._id
             el.student = user[Math.floor(Math.random() * user.length)]._id
-            el.skillsName = user[Math.floor(Math.random() * skills.length)]._id
+            el.skillsName = skills[Math.floor(Math.random() * skills.length)]._id
         })
     } catch(err){
         console.log("error : ", (err))
@@ -32,5 +32,6 @@ exchangeModel
   .deleteMany()
   .then(() => {
     exchangeModel.insertMany(exchangeSeed).then((ok) => console.log("ok"));
+    process.exit();
   })
   .catch((err) => console.log("err", err));

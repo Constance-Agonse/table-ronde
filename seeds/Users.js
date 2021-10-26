@@ -71,5 +71,6 @@ const userSeed = [
 userModel
 .deleteMany()
 .then(() => {
-    userModel.insertMany(userSeed).then(() => console.log("all good"))
+    userModel.insertMany(userSeed).then(() => console.log("all good"));
+    process.exit();
 }) .catch((err) => console.log("err", err));
