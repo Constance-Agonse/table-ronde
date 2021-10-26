@@ -3,11 +3,11 @@ const { Schema, model } = require("mongoose");
 const exchangeSchema = new Schema({
   teacher: {
       type : Schema.Types.ObjectId,
-      ref : "teacher"
+      ref : "users"
   },
   student : {
     type : Schema.Types.ObjectId,
-    ref : "student"
+    ref : "users"
 },
   skillsName: {
     type: Schema.Types.ObjectId,
