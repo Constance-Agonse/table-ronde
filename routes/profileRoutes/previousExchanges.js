@@ -1,4 +1,4 @@
-const { router } = require("../../app");
+const { router } = require("./../../app");
 const router = new express.Router(); //besoin meme si il y a celui d'en haut ?
 
 const UsersModel = require("./../../models/Users");
@@ -7,7 +7,7 @@ const ExchangesModel = require("./../../models/Exchanges");
 
 console.log("hey dream team");
 
-// On cherche a
+// On cherche a récupérer l'id du profil de l'individu, pour récupérer tout ces échanges (ATTENTION IL FAUDRA ENSUITE SELECTIONNER UNIQUEMENT LES ECHANGES AYANT LE STATUT DE TERMINE)
 router.get("/profile/:id/previousCourses", async (req, res, next) => {
     try{
         const exchanges = await ExchangesModel.findById(req.params.id);

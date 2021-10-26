@@ -54,8 +54,7 @@ router.get("/profile/:id([a-z0-9]{24})/skills/:id([a-z0-9]{24})/update", async f
 
 router.post("/profile/:id([a-z0-9]{24})/skills/:id([a-z0-9]{24})/update", (req, res, next) => {
     skillModel
-      .findByIdAndUpdate(req.params.id, {req.body
-      })
+      .findByIdAndUpdate(req.params.id, req.body, { new: true })
       .then((ok) => res.redirect("/skills.hbs"))
       .catch(next);
   });
