@@ -1,3 +1,4 @@
+require('dotenv').config()
 require("./config/mongo");
 
 var createError = require('http-errors');
@@ -9,9 +10,7 @@ const flash = require("connect-flash");
 const hbs = require("hbs");
 const session = require("express-session");
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-const mumuRouter =require('./routes/profileRoutes/mumuRoute')
+
 
 var app = express();
 
@@ -26,14 +25,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/profil', mumuRouter);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+
+
 
 // INITIALIZE SESSION
 app.use(
@@ -43,6 +37,42 @@ app.use(
     resave: true,
   })
 );
+
+app.use((req, res, next) => {
+  req.session.currentUser = {
+    name : "Joe",
+    nickname: "SuperJoe",
+    email : "joe@joe.com",
+    phone : "12",
+    password :"multipass",
+    rates : 2,
+    _id: '6177cb972a9feb76b65688da',
+    skills : "6177fee71b747cb8f07883a4"
+  }
+  next()
+})
+
+
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+const mumuRouter =require('./routes/profileRoutes/mumuRoute')
+
+
+
+app.use('/profile', mumuRouter);
+
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+// app.use('../routes/profileRoutes/userSkills.js', userSkillRouter);
+app.use('/', require('./routes/profileRoutes/previousExchanges'))
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
+});
+
 
 // FLASH MESSAGES
 // enable "flash messaging" system

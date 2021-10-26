@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const UserModel = require('./../../models/Users')
+const UserModel = require('./../../models/Users');
+const ExchangesModel = require("./../../models/Exchanges");
 
 
-router.get('/:id/settings', async (req,res,next) => {
+router.get('/settings', async (req,res,next) => {
     try {
-        console.log(req.params.id)
-       const userInfo =  await UserModel.findById(req.params.id)
-       console.log(userInfo)
+        console.log(req.session.currentUser._id)
+       const userInfo =  await UserModel.find({_id: req.session.currentUser._id})
+       console.log(userInfo[0])
 
        res.render('./profileViews/settings.hbs', {userInfo})
     } catch (err) {
