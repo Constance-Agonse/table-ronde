@@ -1,3 +1,4 @@
+require('dotenv').config()
 require("./config/mongo");
 
 var createError = require('http-errors');
@@ -25,8 +26,25 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(() => {
+  req.session.currentUser = {
+    name : "Joe",
+    nickname: "SuperJoe",
+    email : "joe@joe.com",
+    phone : "12",
+    password :"multipass",
+    rates : 2,
+    _id: '6177fee85ed88f6076b5372e',
+    skills : "6177fee71b747cb8f07883a4"
+  }
+})
+
+
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+// app.use('../routes/profileRoutes/userSkills.js', userSkillRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

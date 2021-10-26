@@ -59,13 +59,6 @@ router.post("/profile/:id([a-z0-9]{24})/skills/:id([a-z0-9]{24})/update", (req, 
       .catch(next);
   });
   
-
-  
-
-
-
-
-
 //route pour supprimer la skill cliquée de Michel
 router.get("/profile/:id([a-z0-9]{24})/skills/:id([a-z0-9]{24})/delete", (req, res, next) => {
     skillModel.findByIdAndRemove(req.params.id)

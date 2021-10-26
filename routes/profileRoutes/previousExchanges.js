@@ -17,3 +17,14 @@ router.get("/profile/:id/previousCourses", async (req, res, next) => {
         next(err);
     }
 })
+
+router.get('/profile/previousCourses' ,async (req, res, next) => {
+    try {
+        const user = await UsersModel.findById(req.session.currentUser._id)
+        const isProf = await ExchangesModel.find({teacher: user._id}).populate('student')
+        // Array of object
+        console.log(user)
+    } catch(err) {
+        next(err)
+    }
+})
