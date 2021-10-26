@@ -12,6 +12,7 @@ const session = require("express-session");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var userSkillRouter = require('./routes/profileRoutes/userSkills');
 
 var app = express();
 
@@ -43,8 +44,8 @@ app.use((req, res, next) => {
     phone : "12",
     password :"multipass",
     rates : 2,
-    _id: '6177fee85ed88f6076b5372e',
-    skills : "6177fee71b747cb8f07883a4"
+    _id: '6178242b6692b52e0d5add7d',
+    skills : "6178242b11469e4a346546fb"
   }
   next()
 })
@@ -52,9 +53,11 @@ app.use((req, res, next) => {
 
 
 
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-// app.use('../routes/profileRoutes/userSkills.js', userSkillRouter);
+app.use('/profile/skills', userSkillRouter);
 app.use('/', require('./routes/profileRoutes/previousExchanges'))
 
 // catch 404 and forward to error handler
