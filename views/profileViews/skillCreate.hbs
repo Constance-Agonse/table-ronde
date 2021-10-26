@@ -1,16 +1,16 @@
 <form method="post" action="/profile/{{_id}}/skills/create" class="form">
     <h2>Add a new skill</h2>
-    <label class="label">Name</label>
+    <label class="label">Skill: </label>
     <input class="input" type="text" name="name" />
     <label for="category" class="label">Category</label>
     <select name="category" id="category">
-        <option value="gardening">starter</option>
-        <option value="sports">elementary</option>
-        <option value="mechanics">intermediate</option>
-        <option value="music">advanced</option>
-        <option value="cooking">expert</option>
-        <option value="computer science">expert</option>
-        <option value="school homework">expert</option>
+        <option value="gardening">gardening</option>
+        <option value="sports">sports</option>
+        <option value="mechanics">mechanics</option>
+        <option value="music">music</option>
+        <option value="cooking">cooking</option>
+        <option value="computerScience">expert</option>
+        <option value="schoolHomework">expert</option>
         <option value="other">expert</option>
     </select>
     <label for="level" class="label">Level</label>
@@ -22,6 +22,7 @@
         <option value="expert">expert</option>
     </select>
     <button class="button">Add!</button>
+    
 </form>
 
 

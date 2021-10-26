@@ -10,7 +10,9 @@ const flash = require("connect-flash");
 const hbs = require("hbs");
 const session = require("express-session");
 
-
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+var userSkillRouter = require('./routes/profileRoutes/userSkills');
 
 var app = express();
 
@@ -63,9 +65,11 @@ const mumuRouter =require('./routes/profileRoutes/mumuRoute')
 app.use('/profile', mumuRouter);
 
 
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-// app.use('../routes/profileRoutes/userSkills.js', userSkillRouter);
+app.use('/profile/skills', userSkillRouter);
 app.use('/', require('./routes/profileRoutes/previousExchanges'))
 
 // catch 404 and forward to error handler
