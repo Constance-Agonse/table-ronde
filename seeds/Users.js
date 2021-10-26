@@ -66,7 +66,7 @@ const userSeed = [
         console.log("error : ", (err))
     }
 
-})
+})();
 
 userModel
 .deleteMany()
