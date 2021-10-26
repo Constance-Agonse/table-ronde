@@ -3,9 +3,9 @@
 <div class="hbsChangingPage">
     <div class="coursDonne">
         <div class="champData">
-            {{#each}}
-                <p class="activity"></p>
-                <p class="student"></p>
+            {{#each exchanges}}
+                <p class="activity">Activity : {{this.skillsName}}</p>
+                <p class="student">Student : {{this.student}}</p>
             {{/each}}            
         </div>
     </div>
