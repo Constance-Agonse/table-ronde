@@ -7,7 +7,11 @@ const skillModel = require("./../models/Skills");
 
 const exchangeSeed = [
   {  exchangeStatus : "in progess" },
-  
+  {  exchangeStatus : "denied" },
+  {  exchangeStatus : "in progess" },
+  {  exchangeStatus : "done" },
+  {  exchangeStatus : "in progess" },
+  {  exchangeStatus : "accepted" },  
 ];
 
 (async function createSeed(){
