@@ -8,7 +8,7 @@
     "seed:skills": "node ./seeds/Skills.js",
     "seed:users": "node ./seeds/Users.js",
     "seed:exchanges": "node ./seeds/Exchanges.js",
-    "seed:all" : "npm run seed:skills & npm run seed:users & npm run seed:exchanges "
+    "seed:all" : "npm run seed:skills && npm run seed:users && npm run seed:exchanges "
   },
 
   "dependencies": {

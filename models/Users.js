@@ -25,12 +25,13 @@ const UserSchema = new Schema({
   password : String,
   skills : {
       type : Schema.Types.ObjectId,
-      ref : "exchanges"
+      ref : "skills"
   },
   rate : {
       type : Schema.Types.ObjectId,
-      ref : "skills"
-  }
+      ref : "exchanges"
+  },
+  rates : Number,
 });
 
 const userModel = model("users", UserSchema);
