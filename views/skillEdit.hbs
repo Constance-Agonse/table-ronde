@@ -1,0 +1,24 @@
+<h2>Edit this skill</h2>
+
+<form method="post" action="/product/update/{{_id}}">
+  <input
+    type="text"
+    name="name"
+    placeholder="product's name"
+    value="{{name}}"
+  />
+  <input
+    type="text"
+    name="price"
+    placeholder="product's price"
+    value="{{price}}"
+  />
+  <input
+    type="text"
+    name="brand"
+    placeholder="product's brand"
+    value="{{brand}}"
+  />
+  <button>edit</button>
+
+</form>
