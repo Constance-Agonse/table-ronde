@@ -39,8 +39,12 @@ router.get('/profile/previousCourses' , async (req, res, next) => {
 // A METTRE DANS LE ONCLICK ou alors utiliser un lien qui renvoie vers la page profile?
 router.post("/profile/previousCourses", async (req, res, next) => {
     const newExchange = req.body;
-    // Comment faire pour garder toutes les memes infos sauf l'id et le statut?
+    const user = await UsersModel.findById(req.session.currentUser._id)
 
+    // Comment faire pour garder toutes les memes infos sauf l'id et le statut?
+    try{
+        const exchange = ExchangesModel.find({teacher: user._id})
+    }
     
 //     try {
 //         const 
@@ -55,9 +59,9 @@ router.post("/profile/previousCourses", async (req, res, next) => {
 //     res.redirect("/dashboard/album");
 //   } 
     
-//     catch (err) {
-//         next(err)
-//     }
+    catch (err) {
+        next(err)
+    }
 })
 
 module.exports = router
