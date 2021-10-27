@@ -40,19 +40,19 @@ app.use(
   })
 );
 
-// app.use((req, res, next) => {
-//   req.session.currentUser = {
-//     name : "Joe",
-//     nickname: "SuperJoe",
-//     email : "joe@joe.com",
-//     phone : "12",
-//     password :"multipass",
-//     rates : 2,
-//     _id: '6179280d72c4354791750fbf',
-//     skills : "6179280c95b685861d3821f8"
-//   }
-//   next()
-// })
+app.use((req, res, next) => {
+  req.session.currentUser = {
+    name : "Joe",
+    nickname: "SuperJoe",
+    email : "joe@joe.com",
+    phone : "12",
+    password :"multipass",
+    rates : 2,
+    _id: '6179280d72c4354791750fbf',
+    skills : ["6179280c95b685861d3821f8"]
+  }
+  next()
+})
 
 
 
@@ -61,18 +61,19 @@ var usersRouter = require('./routes/users');
 const mumuRouter =require('./routes/profileRoutes/mumuRoute')
 const profileRouter = require('./routes/profileRoutes/profile')
 const authRouter = require('./routes/auth')
+const homeRouter = require('./routes/home')
 
 
 
 
-
-app.use('/profile', mumuRouter);
 app.use('/', indexRouter);
 app.use('/auth', authRouter)
 app.use('/users', usersRouter);
 app.use('/profile', profileRouter);
 app.use('/profile/skills', userSkillRouter);
 app.use('/', require('./routes/profileRoutes/previousExchanges'));
+app.use('/profile', mumuRouter);
+app.use('/home', homeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
