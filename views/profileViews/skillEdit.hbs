@@ -1,25 +1,29 @@
-<form method="post" action="/profile/{{_id}}/skills/edit" class="form">
+<form method="post" action="/profile/skills/edit/{{skill._id}}" class="form">
     <h2>Edit this skill</h2>
     <label class="label">Name</label>
-    <input class="input" type="text" name="name" value="" />
+    <input class="input" type="text" name="name" value="{{skill.name}}" />
     <label for="category" class="label">Category</label>
     <select name="category" id="category">
-        <option value="gardening">starter</option>
-        <option value="sports">elementary</option>
-        <option value="mechanics">intermediate</option>
-        <option value="music">advanced</option>
-        <option value="cooking">expert</option>
-        <option value="computer science">expert</option>
-        <option value="school homework">expert</option>
-        <option value="other">expert</option>
+        <option value="-1" disabled selected>{{skill.category}}</option>
+        <option value="gardening">gardening</option>
+        <option value="sports">sports</option>
+        <option value="mechanics">mechanics</option>
+        <option value="music">music</option>
+        <option value="cooking">cooking</option>
+        <option value="computerScience">computer science</option>
+        <option value="schoolHomework">school homework</option>
+        <option value="other">other</option>
     </select>
     <label for="level" class="label">Level</label>
     <select name="level" id="level">
+        <option value="-1" disabled selected>{{skill.level}}</option>
         <option value="starter">starter</option>
         <option value="elementary">elementary</option>
         <option value="intermediate">intermediate</option>
         <option value="advanced">advanced</option>
         <option value="expert">expert</option>
     </select>
-    <button class="button">Add!</button>
+    <button type="submit" class="button">Edit!</button>
 </form>
+
+
