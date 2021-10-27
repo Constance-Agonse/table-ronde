@@ -43,8 +43,8 @@ app.use((req, res, next) => {
     phone : "12",
     password :"multipass",
     rates : 2,
-    _id: '6177fee85ed88f6076b5372e',
-    skills : "6177fee71b747cb8f07883a4"
+    _id: '617826845b370979178e8022',
+    skills : "6178268398432be7b42c35fc"
   }
   next()
 })

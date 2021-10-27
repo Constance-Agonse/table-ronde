@@ -1,19 +1,27 @@
 <h1>Welcome to your previous exchange Flo </h1>
 
 <div class="hbsChangingPage">
-    <div class="coursDonne">
+    <div class="coursDonne"> Lesson given
         <div class="champData">
+            {{#if isProf.exchangeStatus === "done"}}
+                <p>You gave no course yet {{isProf.teacher.name}}</p>
+            {{/if}}
             {{#each isProf}}
-                <p class="activity">Activity : {{this.skillsName.name}} </p>
-                <p class="student">Student : {{this.student.name}} </p>
+                <p class="activity" > <strong>Activity :</strong> {{this.skillsName}} </p>
+                <p class="student"><strong>Student :</strong> {{this.student.name}} </p>
             {{/each}}
         </div>
     </div>
     <div class="coursPris">
-        <div class="champData">
-            <p class="activity">Activity : {{this.skillsName}} </p>
-            <p class="student">Student : {{this.student}} </p>
+        <div class="champData"> Lesson taken
+            {{#if isStudent.exchangeStatus === "done"}}
+                <p>You followed no course yet {{isStudent.student.name}}</p>
+            {{/if}}
+            {{#each isStudent}}
+            <p class="activity"><strong>Activity :</strong> {{this.skillsName.name}} </p>
+            <p class="student"><strong>Teacher :</strong> {{this.teacher.name}} </p>            
             <button class="rebooker">Rebooker</button>
+            {{/each}}
         </div>
     </div>
 </div>

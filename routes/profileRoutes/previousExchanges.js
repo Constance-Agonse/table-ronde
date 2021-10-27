@@ -20,10 +20,14 @@ router.get("/profile/:id/previousCourses", async (req, res, next) => {
 router.get('/profile/previousCourses' , async (req, res, next) => {
     try {
         const user = await UsersModel.findById(req.session.currentUser._id)
+        // on récupère les datas quand il est prof
         const isProf = await ExchangesModel.find({teacher: user._id}).populate('student skillsName')
+        // on récupère les datas quand il est student
+        const isStudent = await ExchangesModel.find({student: user._id}).populate('teacher skillsName')
+
         // Array of object
         console.log(user)
-        res.render('profileViews/previousExchanges', {isProf})
+        res.render('profileViews/previousExchanges', {isProf, isStudent})
     } catch(err) {
         next(err)
     }
