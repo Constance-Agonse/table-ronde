@@ -40,19 +40,19 @@ app.use(
   })
 );
 
-// app.use((req, res, next) => {
-//   req.session.currentUser = {
-//     name : "Joe",
-//     nickname: "SuperJoe",
-//     email : "joe@joe.com",
-//     phone : "12",
-//     password :"multipass",
-//     rates : 2,
-//     _id: '6179280d72c4354791750fbf',
-//     skills : "6179280c95b685861d3821f8"
-//   }
-//   next()
-// })
+app.use((req, res, next) => {
+  req.session.currentUser = {
+    name : "Joe",
+    nickname: "SuperJoe",
+    email : "joe@joe.com",
+    phone : "12",
+    password :"multipass",
+    rates : 2,
+    _id: '617943ba2ad09c6cfe55c378',
+    skills : ["617943b9f6c47ac4e98b56f6"]
+  }
+  next()
+})
 
 
 
