@@ -63,19 +63,20 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const mumuRouter =require('./routes/profileRoutes/mumuRoute')
 const profileRouter = require('./routes/profileRoutes/profile')
+const authRouter = require('./routes/auth')
+const homeRouter = require('./routes/home')
 
 
 
-app.use('/profile', mumuRouter);
-
-
- 
 
 app.use('/', indexRouter);
+app.use('/auth', authRouter)
 app.use('/users', usersRouter);
 app.use('/profile', profileRouter);
 app.use('/profile/skills', userSkillRouter);
 app.use('/', require('./routes/profileRoutes/previousExchanges'));
+app.use('/profile', mumuRouter);
+app.use('/home', homeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
