@@ -48,8 +48,8 @@ app.use((req, res, next) => {
     phone : "12",
     password :"multipass",
     rates : 2,
-    _id: '6177cb972a9feb76b65688da',
-    skills : "6177fee71b747cb8f07883a4"
+    _id: '6178242b6692b52e0d5add7d',
+    skills : "6178242b11469e4a346546fb"
   }
   next()
 })
@@ -65,12 +65,12 @@ const mumuRouter =require('./routes/profileRoutes/mumuRoute')
 app.use('/profile', mumuRouter);
 
 
-
+ 
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/profile/skills', userSkillRouter);
-app.use('/', require('./routes/profileRoutes/previousExchanges'))
+app.use('/', require('./routes/profileRoutes/previousExchanges'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
