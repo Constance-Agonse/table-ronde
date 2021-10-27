@@ -27,6 +27,10 @@ const UserSchema = new Schema({
       type : Schema.Types.ObjectId,
       ref : "skills"
   },
+  hoursLeft : {
+    type : Schema.Types.ObjectId,
+    ref : "exchanges",
+  },
   rate : {
       type : Schema.Types.ObjectId,
       ref : "exchanges"

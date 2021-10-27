@@ -3,9 +3,9 @@
 <div class="hbsChangingPage">
     <div class="coursDonne"> Lesson given
         <div class="champData">
-            {{#if isProf.exchangeStatus === "done"}}
+            {{#unless isProf.length }}
                 <p>You gave no course yet {{isProf.teacher.name}}</p>
-            {{/if}}
+            {{/unless}}
             {{#each isProf}}
                 <p class="activity" > <strong>Activity :</strong> {{this.skillsName}} </p>
                 <p class="student"><strong>Student :</strong> {{this.student.name}} </p>
@@ -14,13 +14,13 @@
     </div>
     <div class="coursPris">
         <div class="champData"> Lesson taken
-            {{#if isStudent.exchangeStatus === "done"}}
+            {{#unless isStudent.length}}
                 <p>You followed no course yet {{isStudent.student.name}}</p>
-            {{/if}}
+            {{/unless}}
             {{#each isStudent}}
             <p class="activity"><strong>Activity :</strong> {{this.skillsName.name}} </p>
             <p class="student"><strong>Teacher :</strong> {{this.teacher.name}} </p>            
-            <button class="rebooker">Rebooker</button>
+            <a href="/profile/{{_id}}" class="rebooker">Rebooker</a>
             {{/each}}
         </div>
     </div>

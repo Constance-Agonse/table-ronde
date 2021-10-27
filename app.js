@@ -12,6 +12,7 @@ const session = require("express-session");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var userSkillRouter = require('./routes/profileRoutes/userSkills');
 
 var app = express();
 
@@ -25,6 +26,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+
+
 
 // INITIALIZE SESSION
 app.use(
@@ -43,18 +48,30 @@ app.use((req, res, next) => {
     phone : "12",
     password :"multipass",
     rates : 2,
-    _id: '617826845b370979178e8022',
-    skills : "6178268398432be7b42c35fc"
+    _id: '6178fc06fc2ba5bef17b3a1a',
+    skills : "6178fc045a0c7fcd3aa08706"
   }
   next()
 })
 
 
 
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+const mumuRouter =require('./routes/profileRoutes/mumuRoute')
+const profileRouter = require('./routes/profileRoutes/profile')
+
+
+
+app.use('/profile', mumuRouter);
+
+
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-// app.use('../routes/profileRoutes/userSkills.js', userSkillRouter);
+app.use('/profile', profileRouter);
+app.use('/profile/skills', userSkillRouter);
 app.use('/', require('./routes/profileRoutes/previousExchanges'))
 
 // catch 404 and forward to error handler
