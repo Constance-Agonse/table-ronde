@@ -10,9 +10,11 @@
             {{#each courseTaken}}        
             <p class="activity">Activity : {{this.skillsName.name}} </p>
             <p class="teacher">Teacher : {{this.teacher.name}}  </p>
-            <p class="details">Details :  </p>
+            <p class="details">Details :{{this._id}} </p>
             <p class="Status">Status : {{this.exchangeStatus}} </p>
-            <button class="cancel"><a href="/profile/delete/coursetaken/{{this._id}}">Cancel</a></button>
+            
+            <button class="lesson-done"><a href="/profile/finished/lessontaken/{{this._id}}">Lesson done</a></button>
+            <button class="cancel"><a href="/profile/cancel/lessontaken/{{this._id}}">Cancel lesson</a></button>
             {{/each}}
         </div>
     <div class="courses-given">
@@ -25,8 +27,18 @@
             <p class="activity">Activity : {{this.skillsName.name}} </p>
             <p class="student">Student : {{this.student.name}} </p>
             <p class="details">Details :  </p>
+            {{!-- <form method="post" action="/profile/update/">
+                <label for="select-status"></label>
+                <select id="select-status" name="exchangeStatus">
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+                <button>Update</button>
+                </form> --}}
             <p class="Status">Status : {{this.exchangeStatus}} </p>
-            <button class="cancel"><a href="/profile/delete/coursegiven/{{this._id}}">Cancel</a></button>
+            
+            <button class="lesson-approved"><a href="/profile/approve/lessongiven/{{this._id}}">Approve this leson</a></button>
+            <button class="cancel"><a href="/profile/cancel/lessongiven/{{this._id}}">Cancel lesson</a></button>
             {{/each}}
         </div>
     </div>
