@@ -1,19 +1,27 @@
 <h1>Welcome to your previous exchange Flo </h1>
 
 <div class="hbsChangingPage">
-    <div class="coursDonne">
+    <div class="coursDonne"> Lesson given
         <div class="champData">
+            {{#unless isProf.length }}
+                <p>You gave no course yet {{isProf.teacher.name}}</p>
+            {{/unless}}
             {{#each isProf}}
-                <p class="activity">Activity : {{this.skillsName.name}} </p>
-                <p class="student">Student : {{this.student.name}} </p>
+                <p class="activity" > <strong>Activity :</strong> {{this.skillsName}} </p>
+                <p class="student"><strong>Student :</strong> {{this.student.name}} </p>
             {{/each}}
         </div>
     </div>
     <div class="coursPris">
-        <div class="champData">
-            <p class="activity">Activity : {{this.skillsName}} </p>
-            <p class="student">Student : {{this.student}} </p>
-            <button class="rebooker">Rebooker</button>
+        <div class="champData"> Lesson taken
+            {{#unless isStudent.length}}
+                <p>You followed no course yet {{isStudent.student.name}}</p>
+            {{/unless}}
+            {{#each isStudent}}
+            <p class="activity"><strong>Activity :</strong> {{this.skillsName.name}} </p>
+            <p class="student"><strong>Teacher :</strong> {{this.teacher.name}} </p>            
+            <a href="/profile/rebook/{{_id}}" class="rebooker">Rebooker</a>
+            {{/each}}
         </div>
     </div>
 </div>
