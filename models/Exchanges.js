@@ -15,7 +15,7 @@ const exchangeSchema = new Schema({
   },
   exchangeStatus : {
       type : String,
-      enum : ["denied","in progess", "accepted", "done" ]
+      enum : ["denied","in progress", "accepted", "done" ]
   }, 
   ratingTeacher : Number,
 });
