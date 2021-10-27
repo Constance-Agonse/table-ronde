@@ -66,13 +66,13 @@ const profileRouter = require('./routes/profileRoutes/profile')
 app.use('/profile', mumuRouter);
 
 
-
+ 
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/profile', profileRouter);
 app.use('/profile/skills', userSkillRouter);
-app.use('/', require('./routes/profileRoutes/previousExchanges'))
+app.use('/', require('./routes/profileRoutes/previousExchanges'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

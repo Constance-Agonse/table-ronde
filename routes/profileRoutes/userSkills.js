@@ -4,6 +4,8 @@ const skillModel = require("./../../models/Skills");
 
 const userModel = require("./../../models/Users");
 
+// la route c'est /profile/skills
+
 
 
 // //route pour créer des nouvelles skills DE MICHEL
@@ -33,10 +35,8 @@ const userModel = require("./../../models/Users");
 //route pour afficher toutes les skills de Michel
 router.get("/", async (req, res, next) => {
     try {
-    
         const user = await userModel.findById(req.session.currentUser._id).populate('skills');
-        console.log(user);
-        res.render("profileViews/skills.hbs", {user});
+        res.render("profileViews/skills.hbs", { user });
     } catch (err) {
         next(err);
     }
@@ -61,11 +61,35 @@ router.get("/", async (req, res, next) => {
 //         .catch(next);
 // });
 
-// //route pour supprimer la skill cliquée de Michel
-// router.get("/profile/skills/:id([a-z0-9]{24})/delete", (req, res, next) => {
-//     skillModel.findByIdAndRemove(req.params.id)
-//         .then(() => res.redirect("/profile/:id([a-z0-9]{24})/skills"))
-//         .catch(next);
-// });
+//route pour supprimer la skill cliquée de Michel
+
+
+router.get('/delete/:id', async (req,res,next) => {
+    try {
+
+         await skillModel.findByIdAndDelete(req.params.id)
+         console.log(req.params.id)
+         res.redirect("/profile/skills")
+        
+    } catch (err) {
+        next(err);
+    }
+})
+
+
+
+
+// router.get("/delete/:id", (req, res, next) => {
+//     productModel
+//       .findByIdAndDelete(req.params.id)
+//       .then((products) => res.redirect("/product"))
+//       .catch(next);
+//   });
+
+
+
+
+
+
 
 module.exports = router;

@@ -23,10 +23,10 @@ const UserSchema = new Schema({
   },
   phone : String,
   password : String,
-  skills : {
+  skills : [{
       type : Schema.Types.ObjectId,
       ref : "skills"
-  },
+  }],
   hoursLeft : {
     type : Schema.Types.ObjectId,
     ref : "exchanges",
