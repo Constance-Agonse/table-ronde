@@ -1,22 +1,23 @@
 <h2>Your skills</h2>
 
-{{#unless user.skills}}
-<p>{{user.skills}}</p>
-<p>Add your skills to join the community!</p>
-<a href="">Add skill</a>
-{{/unless}}
-
 <ul>
     {{#each user.skills}}
     <li>
         <p>{{this.name}}</p>
         <p>{{this.level}}</p>
         <p>{{this.category}}</p>
-        <a href="skills/delete/{{_id}}">Delete</a>
-        <a href="">Edit</a>
+        <a href="skills/delete/{{this._id}}">Delete</a>
+        <a href="skills/edit/{{this._id}}">Edit</a>
     </li>
     {{/each}}
+</ul>
 
+
+{{#unless user.skills}}
+<p>No skills yet?</p>
+{{/unless}}
+<p>Add your skills to join the community!</p>
+<a href="skills/create">Add skill</a>
 
 
     {{!-- inserer les liens pour delete and edit + add skill --}}
