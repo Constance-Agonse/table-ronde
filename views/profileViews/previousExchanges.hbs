@@ -9,7 +9,7 @@
                 <p>You gave no course yet {{isProf.teacher.name}}</p>
             {{/unless}}
             {{#each isProf}}
-                <p class="activity" > <strong>Activity :</strong> {{this.skillsName}} </p>
+                <p class="activity" > <strong>Activity :</strong> {{this.skillsName.name}} </p>
                 <p class="student"><strong>Student :</strong> {{this.student.name}} </p>
             {{/each}}
         </div>
