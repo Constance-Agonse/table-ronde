@@ -1,1 +1,35 @@
-<h1>Profile</h1>
+<h1>Welcome ! </h1>
+
+<div>
+    <div class="courses-taken">
+        <h2>Courses taken</h2>
+        <div class="champData">
+            {{#unless courseTaken.length}}
+            <p>No studying courses booked yet !</p>
+            {{/unless}}    
+            {{#each courseTaken}}        
+            <p class="activity">Activity : {{this.skillsName.name}} </p>
+            <p class="teacher">Teacher : {{this.teacher.name}}  </p>
+            <p class="details">Details :  </p>
+            <p class="Status">Status : {{this.exchangeStatus}} </p>
+            <button class="cancel"><a href="/profile/delete/coursetaken/{{this._id}}">Cancel</a></button>
+            {{/each}}
+        </div>
+    <div class="courses-given">
+        <div class="champData">
+            <h2>Courses given</h2>
+            {{#unless courseGiven.length}}
+            <p>No given courses booked yet !</p>
+            {{/unless}}
+            {{#each courseGiven}}   
+            <p class="activity">Activity : {{this.skillsName.name}} </p>
+            <p class="student">Student : {{this.student.name}} </p>
+            <p class="details">Details :  </p>
+            <p class="Status">Status : {{this.exchangeStatus}} </p>
+            <button class="cancel"><a href="/profile/delete/coursegiven/{{this._id}}">Cancel</a></button>
+            {{/each}}
+        </div>
+    </div>
+    
+    </div>
+</div>
