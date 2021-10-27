@@ -20,9 +20,27 @@ router.get('/', async (req,res,next) => {
     }
 })
 
-router.get('/delete/coursegiven/:id', async (req,res,next) => {
+
+
+router.get('/finished/lessontaken/:id', async (req,res,next) => {
     try {
-         await ExchangesModel.findByIdAndDelete({ _id : req.params.id})
+        console.log("===^^^^^^^^====");
+        console.log(req.params.id);
+        const updateStatus =  await ExchangesModel.findByIdAndUpdate(req.params.id, { exchangeStatus : "done" }, { new: true})
+        console.log("==========================updateStatus");
+        console.log(updateStatus);
+        console.log("==========================");
+        res.redirect("/profile")
+        
+    } catch (err) {
+        next(err);
+    }
+})
+
+
+router.get('/cancel/lessontaken/:id', async (req,res,next) => {
+    try {
+        const updateStatus =  await ExchangesModel.findByIdAndUpdate(req.params.id, { exchangeStatus : "denied" }, { new: true})
          res.redirect("/profile")
         
     } catch (err) {
@@ -30,9 +48,24 @@ router.get('/delete/coursegiven/:id', async (req,res,next) => {
     }
 })
 
-router.get('/delete/coursetaken/:id', async (req,res,next) => {
+router.get('/approve/lessongiven/:id', async (req,res,next) => {
     try {
-         await ExchangesModel.findByIdAndDelete({ _id : req.params.id})
+        console.log("===^^^^^^^^====");
+        console.log(req.params.id);
+        const updateStatus =  await ExchangesModel.findByIdAndUpdate(req.params.id, { exchangeStatus : "accepted" }, { new: true})
+        console.log("==========================updateStatus");
+        console.log(updateStatus);
+        console.log("==========================");
+        res.redirect("/profile")
+        
+    } catch (err) {
+        next(err);
+    }
+})
+
+router.get('/cancel/lessongiven/:id', async (req,res,next) => {
+    try {
+        const updateStatus =  await ExchangesModel.findByIdAndUpdate(req.params.id, { exchangeStatus : "denied" }, { new: true})
          res.redirect("/profile")
         
     } catch (err) {
