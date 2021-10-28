@@ -66,8 +66,7 @@ router.get('/approve/lessongiven/:id', async (req,res,next) => {
 router.get('/cancel/lessongiven/:id', async (req,res,next) => {
     try {
         const updateStatus =  await ExchangesModel.findByIdAndUpdate(req.params.id, { exchangeStatus : "denied" }, { new: true})
-         res.redirect("/profile")
-        
+         res.redirect("/profile")  
     } catch (err) {
         next(err);
     }

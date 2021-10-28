@@ -21,7 +21,7 @@
     --jaune: #FFBC00;
 }
 
-#page-container {
+.page-container {
     font-family: Satoshi;
     width: 100vw;
     height: 100vh;
