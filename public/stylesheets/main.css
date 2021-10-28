@@ -36,6 +36,17 @@
     background-color: rgba(0, 70, 130, 1);
 }
 
+#partials{
+    position: absolute;
+    top: 20px; 
+    right: 40px;
+}
+
+#partials nav{
+    background-color: rgba(255, 255, 255, 0.7);  
+    border-radius: 10px;
+    padding : 12px 20px;
+}
 
 #search-level {
     width: 150px;
