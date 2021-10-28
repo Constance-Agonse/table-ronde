@@ -1,0 +1,15 @@
+@import './reset.css';
+@import './profile-nav.css';
+
+@font-face {
+    font-family: Satoshi;
+    src: url('./../fonts/Satoshi-Regular.otf');
+}
+
+* {
+    /* box-sizing: border-box;
+    margin: 0;
+    padding: 0; */
+    font-family: Satoshi;
+}
+

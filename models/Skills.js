@@ -12,7 +12,7 @@ const SkillSchema = new Schema({
     },
     category: {
         type: String,
-        enum: ["gardening", "sports", "mechanics", "music", "cooking", "computer science", "school homework", "other"],
+        enum: ["gardening", "sports", "mechanics", "music", "cooking", "computer science", "school homework", "wellness", "do-it-yourself", "other"],
     },
 
 });

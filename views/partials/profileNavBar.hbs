@@ -1,6 +1,15 @@
-<ul>
-    <li><a href="/profile">profile</a></li>
-<li><a href="/profile/settings">My Account details</a></li>
-<li><a href="/profile/skills">My Skills</a></li>
-<li><a href="/profile/previouscourses"> Courses History</a></li>
-</ul>
+<link rel="stylesheet" href="./../../public/stylesheets/profile-nav.css">
+<div id="nav-bar-container">
+    <img src="{{user.profilPicture}}" alt="">
+    <h1>Hello {{user.name}}</h1>
+    <div>
+        <ul>
+            <li><a href="/profile">My current exchanges</a></li>
+            <li><a href="/profile/previouscourses"> Courses History</a></li>
+            <li><a href="/profile/skills">My Skills</a></li>
+            <li><a href="/profile/settings">My Account details</a></li>
+        </ul>
+    </div>
+</div>
+
+{{!-- user.name ne marche pas --}}
