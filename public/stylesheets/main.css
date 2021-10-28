@@ -33,9 +33,87 @@
 }
 
 .profile-nav-bar{
-
+    width: 300px;
+    height: 100vh;
 }
 
 .profile-right-block{
+    width: 100%;
+    background-image: url('../img/backgrounds/bgsharing.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.sub-title{
+    font-size: 30px;
+    margin-bottom: 20px;
+
+}
+
+/* CURRENT EXCHANGES/PROFILE  */
+
+.block-current-exchanges-container{
+    max-width: 800px;
+    margin:auto;
+      
+
+}
+
+
+.courses-taken{
+max-width: 100%;
+background-color: var(--orange);
+border-radius: 24px;
+padding: 24px;
+margin-top: 100px;
+margin-bottom: 50px;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.courses-given{
+background-color: var(--rose);
+border-radius: 24px;
+padding: 24px;
+margin-bottom: 100px;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.course-table-head{
+font-weight: bold;
+}
+.course-table{
+    width: 100%;
+
+}
+
+.course-button{
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 18px;
+    padding: 12px;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 1s;
+    transition: all ease-in-out .1s;
+}
+
+.course-button:hover{
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.12);
+}
+.course-table-line{
+    line-height: 3.5;
+}
+/* MY SKILLS */
+
+.skills-block{
+    max-width: 800px;
+    margin:auto;
+    background-color: var(--rose);
+    border-radius: 24px;
+    padding: 24px;
+    margin-top: 100px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); 
 
 }
