@@ -42,14 +42,13 @@ searchBar.oninput = handleInput;
 searchLevel.onchange = handleChange;
 
 
-
+const searchBoxResult = document.getElementById("home-search-result");
 // TRY DOM HUGO ----------------------------------------------------------------------
-function displayUsers(skills) {
+function displayUsers(user) {
   // display the list we fetched via AJAX method
-  tbody.innerHTML = ""; // empty the table's body
-  if (skills.length === 0) displayEmptyRow(); // A remplacer par aucune réation car nous n'avons pas de tableau
-  else
-    skills.forEach((skill) => {
+  searchBoxResult.innerHTML = ""; // empty the div
+
+  user.forEach((skill) => {
       // create one div per skill containing multiple element > skill's infos
       const div = document.createElement("div");
       div.setAttribute("data-skill-id", skill._id); // seting the skill's id on the tr so we can use it later for deletion
@@ -63,7 +62,7 @@ function displayUsers(skills) {
       div.innerHTML = template;
       div.querySelector("button").onclick = () => deleteUser(user._id); // preparing the listener for deletion
       div.appendChild(div); // a remplacer le premier div par la section du dessus
-    });
+  });
 
   listenUsernameChanges();// a remplacer
 }

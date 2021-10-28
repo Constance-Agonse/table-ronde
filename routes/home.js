@@ -41,25 +41,35 @@ router.get("/search", async function (req, res, next) {
     const test3 = [];
     test.forEach(function (result) {
       if (result.skills.length) {
+        console.log("//////111//////")        
+        console.log(result)
+        console.log("//////222//////")        
+
+
         console.log("******1*****")        
-        console.log(result.skills)
+        console.log(result.skills[0])
         console.log("*****2******")
-        result.skills.foreach((skill) => {
-          console.log("///////////")
-          console.log(skill.level)
+        result.skills.forEach((skill) => {
+          console.log("AAAAAAAAAAAAAAAAA")
+          if(skill.level === "starter"){
+            test3.push(result);
+            console.log("added")
+          } else {
+            console.log("not added")
+          }
+          
         })
         // if(result.skills[0].level === "expert"){
         //   console.log("*****3******")
         // console.log(result)          
-          test3.push(result);
         // }
         
         
       }
     });
 
-    console.log(test3);
-    console.log(test3[0].skills);
+    // console.log(test3);
+    // console.log(test3[0].skills);
 
     
 
