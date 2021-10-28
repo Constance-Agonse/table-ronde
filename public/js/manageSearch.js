@@ -11,7 +11,8 @@ function searchSkill(evt) {
     })
     .then((httpResponse) => {
       console.log("Successs: ", httpResponse.data);
-      displaySkill(httpResponse.data);
+      // displaySkill(httpResponse.data);
+      displayUsers(httpResponse.data);
     })
     .catch((err) => console.error(err));
 }
@@ -21,9 +22,10 @@ searchBar.oninput = searchSkill;
 
 function displaySkill(users) {
   users.forEach((element) => {
-    divTest.innerHTML = `this is : ${element.name} ${JSON.stringify(
-      element.skills
-    )}`;
+    divTest.innerHTML = `this is : ${element.name} ${element.skills[0].name} 
+    
+    `;
+    // ${JSON.stringify( element.skills[0].name)}
   });
 }
 
@@ -44,25 +46,21 @@ searchLevel.onchange = handleChange;
 
 const searchBoxResult = document.getElementById("home-search-result");
 // TRY DOM HUGO ----------------------------------------------------------------------
-function displayUsers(user) {
+function displayUsers(users) {
   // display the list we fetched via AJAX method
   searchBoxResult.innerHTML = ""; // empty the div
 
-  user.forEach((skill) => {
+  users.forEach((user) => {
       // create one div per skill containing multiple element > skill's infos
       const div = document.createElement("div");
-      div.setAttribute("data-skill-id", skill._id); // seting the skill's id on the tr so we can use it later for deletion
-      const template = `
-            <img>
-                //picture to put here
-            </img>
-            <p class="resultText">${user.name} propose <strong>${user.skillName}</strong></p>
-            <p>Niveau :${skill.level}</p>
-            <button class="ask-for-a-course">Ask for a course</button>`;
+      div.setAttribute("class","user-info"); // seting the skill's id on the tr so we can use it later for deletion
+      const template = `       
+            <img src="${user.profilPicture}" alt=""></img>
+            <p class="resultText">${user.name} can teach you the <strong>${user.skills[0].name}</strong> !</p>
+            <p>Level : ${user.skills[0].level}</p>
+            <button class="btn-book-course"><strong>Ask for a course !</strong></button>`;
       div.innerHTML = template;
-      div.querySelector("button").onclick = () => deleteUser(user._id); // preparing the listener for deletion
-      div.appendChild(div); // a remplacer le premier div par la section du dessus
+      //div.querySelector("button").onclick = () => deleteUser(user._id); // preparing the listener for deletion
+      searchBoxResult.appendChild(div); // a remplacer le premier div par la section du dessus
   });
-
-  listenUsernameChanges();// a remplacer
 }

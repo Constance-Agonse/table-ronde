@@ -4,7 +4,6 @@ const UserModel = require("../models/Users");
 const ExchangesModel = require("../models/Exchanges");
 const SkillsModel = require("../models/Skills");
 
-
 router.get("/", (req, res, next) => {
   res.render("./home-search/home");
 });
@@ -12,7 +11,6 @@ router.get("/", (req, res, next) => {
 router.get("/search", async function (req, res, next) {
   //   const regexp = new RegExp(req.query.search, "ig");
 
-  
   let skillFilter = "";
 
   switch (req.query.level) {
@@ -46,7 +44,7 @@ router.get("/search", async function (req, res, next) {
         ],
       };
       break;
-    case "expert":
+    case "advanced":
       skillFilter = { $or: [{ level: "advanced" }, { level: "expert" }] };
       break;
     case "expert":
@@ -54,6 +52,7 @@ router.get("/search", async function (req, res, next) {
       break;
 
     default:
+      console.log("===============")
       skillFilter = {
         $or: [
           { level: "starter" },
@@ -72,36 +71,13 @@ router.get("/search", async function (req, res, next) {
       path: "skills",
       match: { $and: [{ name: { $regex: regexp } }, skillFilter] },
     });
-   
+
     // console.log("========");
     // console.log(test);
     const test3 = [];
-    test.forEach(function (result) {
+    test2 = test.forEach(function (result) {
       if (result.skills.length) {
-        console.log("//////111//////")        
-        console.log(result)
-        console.log("//////222//////")        
-
-
-        console.log("******1*****")        
-        console.log(result.skills[0])
-        console.log("*****2******")
-        result.skills.forEach((skill) => {
-          console.log("AAAAAAAAAAAAAAAAA")
-          if(skill.level === "starter"){
-            test3.push(result);
-            console.log("added")
-          } else {
-            console.log("not added")
-          }
-          
-        })
-        // if(result.skills[0].level === "expert"){
-        //   console.log("*****3******")
-        // console.log(result)          
-        // }
-        
-        
+        test3.push(result);
       }
     });
 
