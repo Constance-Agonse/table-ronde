@@ -36,7 +36,7 @@ router.get("/profile/previousCourses", async (req, res, next) => {
 
     // Array of object
     console.log(user);
-    res.render("profileViews/previousExchanges", { isProf, isStudent, user });
+    res.render("profileViews/previousExchanges", { isProf, isStudent, user, page: 'previousCourses' });
   } catch (err) {
     next(err);
   }

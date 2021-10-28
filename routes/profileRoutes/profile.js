@@ -16,7 +16,7 @@ router.get('/', async (req,res,next) => {
         
         console.log(courseTaken);
 
-        res.render("./profileViews/profile.hbs", {courseTaken, courseGiven, user})
+        res.render("./profileViews/profile.hbs", {courseTaken, courseGiven, user, page: 'profile' })
     } catch (err) {
         next(err);
     }

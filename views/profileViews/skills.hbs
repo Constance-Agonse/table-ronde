@@ -1,10 +1,12 @@
 <div id="profile-nav-bar">
     {{> profileNavBar}}
-    {{> profileLoginNavBar}}
 </div>
 
 
 <div class="profile-right-block">
+    <div class="partial-login-logout">
+     {{> profileLoginNavBar}}
+     </div>
     <div class="skills-block">
         {{#unless user.skills}}
         <p>No skills yet?</p>

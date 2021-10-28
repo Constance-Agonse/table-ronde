@@ -11,7 +11,7 @@ router.get("/", async (req, res, next) => {
     try {
         const user = await userModel.findById(req.session.currentUser._id).populate('skills');
 
-        res.render("profileViews/skills.hbs", { user });
+        res.render("profileViews/skills.hbs", { user, page: 'skills' });
     } catch (err) {
         next(err);
     }

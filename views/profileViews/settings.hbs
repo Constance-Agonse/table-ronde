@@ -1,11 +1,13 @@
 <div id="profile-nav-bar">
     {{> profileNavBar}}
-    {{> profileLoginNavBar}}
     
 </div>
 
 
 <div id="profile-right-block">
+    <div class="partial-login-logout">
+     {{> profileLoginNavBar}}
+     </div>
 
 {{#each userInfo}}
 <p>name :{{this.name}}</p>
