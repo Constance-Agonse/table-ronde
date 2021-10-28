@@ -22,7 +22,7 @@ router.get("/", async (req, res, next) => {
 
 
 router.get("/create", async function (req, res, next) {
-    res.render("profileViews/skillCreate.hbs");
+    res.render("profileViews/skillCreate.hbs",);
 });
 
 router.post("/create", async (req, res, next) => {
