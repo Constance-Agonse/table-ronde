@@ -16,11 +16,34 @@ function searchSkill(evt) {
     .catch((err) => console.error(err));
 }
 
-<<<<<<< HEAD
 searchBar.oninput = searchSkill;
 
 
-// TRY DOM HUGO
+function displaySkill(users) {
+  users.forEach((element) => {
+    divTest.innerHTML = `this is : ${element.name} ${JSON.stringify(
+      element.skills
+    )}`;
+  });
+}
+
+const handleInput = (evt) => {
+  searchObject.search = evt.target.value;
+  searchSkill();
+};
+
+const handleChange = (evt) => {
+  searchObject.level = evt.target.value;
+  searchSkill();
+};
+
+
+searchBar.oninput = handleInput;
+searchLevel.onchange = handleChange;
+
+
+
+// TRY DOM HUGO ----------------------------------------------------------------------
 function displayUsers(skills) {
   // display the list we fetched via AJAX method
   tbody.innerHTML = ""; // empty the table's body
@@ -44,26 +67,3 @@ function displayUsers(skills) {
 
   listenUsernameChanges();// a remplacer
 }
-=======
-function displaySkill(users) {
-  users.forEach((element) => {
-    divTest.innerHTML = `this is : ${element.name} ${JSON.stringify(
-      element.skills
-    )}`;
-  });
-}
-
-const handleInput = (evt) => {
-  searchObject.search = evt.target.value;
-  searchSkill();
-};
-
-const handleChange = (evt) => {
-  searchObject.level = evt.target.value;
-  searchSkill();
-};
-
-
-searchBar.oninput = handleInput;
-searchLevel.onchange = handleChange;
->>>>>>> 60b7f1be3022c36b1beed771b1a0f6b119f30501
