@@ -6,8 +6,6 @@ const userModel = require("./../../models/Users");
 
 // la route est préfixée avec /profile/skills dans app.js
 
-
-
 //route pour afficher toutes les skills de Michel
 router.get("/", async (req, res, next) => {
     try {
@@ -18,8 +16,6 @@ router.get("/", async (req, res, next) => {
         next(err);
     }
 });
-
-
 
 // //route pour créer des nouvelles skills DE MICHEL
 // //attention, les skills create sont propres à chaque utilisateur car on set le niveau 
@@ -40,43 +36,26 @@ router.post("/create", async (req, res, next) => {
     }
 });
 
-
-
-
-
-// router.post("/profile/:id([a-z0-9]{24})/skills/create", (req, res, next) => {
-//     skillModel.create(req.body)
-//     .then((skill) => {
-//         res.redirect("skills")
-//     })
-//     .catch(() => res.render("skills.hbs"))
-// })
-
-
-
-
-
 // //route pour modifier la skill de Michel cliquée
 
 
-router.get("/edit/:id", async function (req, res, next) {
+router.get("/edit/:id", async  (req, res, next)  => {
     try {
         const skill = await skillModel.findById(req.params.id);
-        res.render("skillEdit.hbs", { skill: skill })
+        res.render("profileViews/skillEdit.hbs", { skill })
     } catch (err) {
         next(err);
     }
 });
 
-
-// router.post("/profile/skills/:id([a-z0-9]{24})/update", (req, res, next) => {
-//     skillModel
-//         .findByIdAndUpdate(req.params.id, req.body, { new: true })
-//         .then((ok) => res.redirect("/skills.hbs"))
-//         .catch(next);
-// });
-
-
+router.post("/edit/:id", async  (req, res, next) =>{
+    try{
+        await skillModel.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        res.redirect("/profile/skills")
+    }catch (err) {
+        next(err);
+      }
+});
 
 
 //route pour supprimer la skill cliquée de Michel
@@ -91,19 +70,6 @@ router.get('/delete/:id', async (req, res, next) => {
         next(err);
     }
 })
-
-
-
-
-// router.get("/delete/:id", (req, res, next) => {
-//     productModel
-//       .findByIdAndDelete(req.params.id)
-//       .then((products) => res.redirect("/product"))
-//       .catch(next);
-//   });
-
-
-
 
 
 
