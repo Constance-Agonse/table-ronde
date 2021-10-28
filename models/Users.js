@@ -9,8 +9,10 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  profilPicture: String,
-  email: {
+  profilPicture: {type: String,
+    default: '/img/profilepics/profilepic1.png'
+    },
+    email: {
     type: String,
     unique: true,
     validate: (email) => {
