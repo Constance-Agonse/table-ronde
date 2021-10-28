@@ -1,6 +1,8 @@
-<h1>learn ajax crud</h1>
+    <link rel="stylesheet" href="stylesheets/main.css" />
 
-<nav>
+<div id="home-global-container">
+    <h1>Exchange your skills with Table Ronde</h1>
+    <nav>
 {{#if isLoggedIn}}
     <a href="/profile">My Profile</a>
     <a href="/auth/signout">Log Out</a>
@@ -11,33 +13,28 @@
 {{/unless}}
 
 </nav>
+    <div id="search-general">
+        <div id="zbeulRecherche">
+            
+            <p>You want to learn about :</p>
+                <input id="search-skill" type="text" placeholder="guitar, yoga, javascript ...">
+            <p>Filter by level :</p>    
+                <select id="search-level">
+                    {{!-- <option value="starter" disabled selected>Starter</option> --}}
+                    <option value="starter">starter</option>
+                    <option value="elementary">elementary</option>
+                    <option value="intermediate">intermediate</option>
+                    <option value="advanced">advanced</option>
+                    <option value="expert">expert</option>
+                </select>
+                <div id="test"></div>
+
+        </div>
+
+        <div id="home-search-result">
+
+        </div>
+    </div>
+</div>
 
 
-<hr>
-<button id="fetch-all-users">fetch users</button>
-<input id="search-skill" type="text" placeholder="search a skill">
-<select id="search-level">
-{{!-- <option value="starter" disabled selected>Starter</option> --}}
-<option value="starter">starter</option>
-<option value="elementary">elementary</option>
-<option value="intermediate">intermediate</option>
-<option value="advanced">advanced</option>
-<option value="expert">expert</option>
-</select>
-<div id="test"></div>
-
-
-
-
-{{!-- <table id="users-list">
-    <thead>
-        <tr>
-            <th>id</th>
-            <th>username</th>
-            <th>email</th>
-            <th>role</th>
-        </tr>
-    </thead>
-    <tbody>
-    </tbody>
-</table> --}}

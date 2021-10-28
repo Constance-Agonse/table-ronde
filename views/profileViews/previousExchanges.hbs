@@ -6,30 +6,77 @@
 
 
 <div class="profile-right-block">
-    <h1>Welcome to your previous exchanges {{user.name}} </h1>
-    <div class="hbsChangingPage">
-        <div class="coursDonne"> Lesson given
-            <div class="champData">
-                {{#unless isProf.length }}
-                <p>You gave no course yet {{isProf.teacher.name}}</p>
-                {{/unless}}
-                {{#each isProf}}
-                <p class="activity"> <strong>Activity :</strong> {{this.skillsName.name}} </p>
-                <p class="student"><strong>Student :</strong> {{this.student.name}} </p>
-                {{/each}}
+    <div class="block-current-exchanges-container">
+        <div class="hbsChangingPage">
+
+            <div class="courses-taken">
+                <div class="champData">
+                    <h2 class="sub-title">Lesson taken</h2>
+                    {{#unless isStudent.length}}
+                    <p>You followed no course yet {{isStudent.student.name}}</p>
+                    {{else}}
+                    <table class="course-table">
+                        <thead class="course-table-head">
+                            <tr class="course-table-line">
+                                <th>Activity</th>
+                                <th>Teacher</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each isStudent}}
+                            <tr class="course-table-line">
+                                <td>
+                                    <p class="activity">{{this.skillsName.name}} </p>
+                                </td>
+                                <td>
+                                    <p class="teacher">{{this.teacher.name}}</p>
+                                </td>
+                                <td>
+                                    <a href="/profile/rebook/{{_id}}" class="rebooker">Rebooker</a>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                    {{/unless}}
+                </div>
             </div>
-        </div>
-        <div class="coursPris">
-            <div class="champData"> Lesson taken
-                {{#unless isStudent.length}}
-                <p>You followed no course yet {{isStudent.student.name}}</p>
-                {{/unless}}
-                {{#each isStudent}}
-                <p class="activity"><strong>Activity :</strong> {{this.skillsName.name}} </p>
-                <p class="student"><strong>Teacher :</strong> {{this.teacher.name}} </p>
-                <a href="/profile/rebook/{{_id}}" class="rebooker">Rebooker</a>
-                {{/each}}
+
+
+            <div class="courses-given">
+                <h2 class="sub-title">Lesson given</h2>
+                <div class="champData">
+                    {{#unless isProf.length }}
+                    <p>You gave no course yet {{isProf.teacher.name}}</p>
+                    {{else}}
+                    <table class="course-table">
+                        <thead class="course-table-head">
+                            <tr class="course-table-line">
+                                <th>Activity</th>
+                                <th>Student</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each isProf}}
+                            <tr class="course-table-line">
+                                <td>
+                                    <p class="activity">{{this.skillsName.name}} </p>
+                                </td>
+                                <td>
+                                    <p class="teacher">{{this.student.name}}</p>
+                                </td>
+
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                    {{/unless}}
+
+                </div>
             </div>
+
         </div>
     </div>
 </div>
