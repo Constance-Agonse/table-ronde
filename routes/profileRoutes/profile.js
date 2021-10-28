@@ -5,6 +5,8 @@ const ExchangesModel = require("./../../models/Exchanges");
 
 
 router.get('/', async (req,res,next) => {
+
+    console.log(res.locals.isLoggedIn);
     try {
         console.log(req.session.currentUser._id);
         const user = await UserModel.findById(req.session.currentUser._id);

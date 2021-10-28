@@ -23,7 +23,7 @@ function displaySkill(users) {
   users.forEach((element) => {
     divTest.innerHTML = `this is : ${element.name} ${JSON.stringify(
       element.skills
-    )}`;
+    )}, niveau :  ${searchLevel.value}`;
   });
 }
 

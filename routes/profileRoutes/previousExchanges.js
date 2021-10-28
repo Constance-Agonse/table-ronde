@@ -13,6 +13,7 @@ router.get("/profile/:id/previousCourses", async (req, res, next) => {
   try {
     const exchanges = await ExchangesModel.findById(req.params.id);
     console.log(exchanges);
+    
     res.render("profile/:id/previousCourses", { exchanges });
   } catch (err) {
     next(err);

@@ -4,8 +4,6 @@ const UserModel = require("../models/Users");
 const ExchangesModel = require("../models/Exchanges");
 const SkillsModel = require("../models/Skills");
 
-
-
 router.get("/", (req, res, next) => {
   res.render("./home-search/home");
 });
@@ -13,7 +11,6 @@ router.get("/", (req, res, next) => {
 router.get("/search", async function (req, res, next) {
   //   const regexp = new RegExp(req.query.search, "ig");
 
-  
   let skillFilter = "";
 
   switch (req.query.level) {
@@ -47,7 +44,7 @@ router.get("/search", async function (req, res, next) {
         ],
       };
       break;
-    case "expert":
+    case "advanced":
       skillFilter = { $or: [{ level: "advanced" }, { level: "expert" }] };
       break;
     case "expert":
@@ -55,6 +52,7 @@ router.get("/search", async function (req, res, next) {
       break;
 
     default:
+      console.log("===============")
       skillFilter = {
         $or: [
           { level: "starter" },
@@ -73,7 +71,7 @@ router.get("/search", async function (req, res, next) {
       path: "skills",
       match: { $and: [{ name: { $regex: regexp } }, skillFilter] },
     });
-   
+
     // console.log("========");
     // console.log(test);
     const test3 = [];
