@@ -1,0 +1,13 @@
+
+
+#signup-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+}
+
+#hidden-sentence {
+    visibility: hidden;
+    background-color: white;
+}

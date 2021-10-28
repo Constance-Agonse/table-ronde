@@ -1,5 +1,6 @@
 @import './reset.css';
 @import './profile-nav.css';
+@import './auth.css';
 
 @font-face {
     font-family: Satoshi;
