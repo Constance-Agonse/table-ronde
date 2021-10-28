@@ -1,16 +1,22 @@
-const searchBar = document.getElementById("search-skill")
+const searchBar = document.getElementById("search-skill");
+const searchLevel = document.getElementById("search-level");
+const divTest = document.getElementById("test");
+
+const searchObject = {};
 
 function searchSkill(evt) {
   axios
     .get("/home/search", {
-      params: {
-        search: evt.target.value,
-      },
+      params: searchObject,
     })
-    .then((httpResponse) => displaySkill(httpResponse.data))
+    .then((httpResponse) => {
+      console.log("Successs: ", httpResponse.data);
+      displaySkill(httpResponse.data);
+    })
     .catch((err) => console.error(err));
 }
 
+<<<<<<< HEAD
 searchBar.oninput = searchSkill;
 
 
@@ -38,3 +44,26 @@ function displayUsers(skills) {
 
   listenUsernameChanges();// a remplacer
 }
+=======
+function displaySkill(users) {
+  users.forEach((element) => {
+    divTest.innerHTML = `this is : ${element.name} ${JSON.stringify(
+      element.skills
+    )}`;
+  });
+}
+
+const handleInput = (evt) => {
+  searchObject.search = evt.target.value;
+  searchSkill();
+};
+
+const handleChange = (evt) => {
+  searchObject.level = evt.target.value;
+  searchSkill();
+};
+
+
+searchBar.oninput = handleInput;
+searchLevel.onchange = handleChange;
+>>>>>>> 60b7f1be3022c36b1beed771b1a0f6b119f30501
