@@ -56,9 +56,9 @@ function displayUsers(users) {
       div.setAttribute("class","user-info"); // seting the skill's id on the tr so we can use it later for deletion
       const template = `       
             <img src="${user.profilPicture}" alt=""></img>
-            <p class="resultText">${user.name} can teach you the <strong>${user.skills[0].name}</strong> !</p>
+            <p class="resultText">${user.name} can teach you the <b>${user.skills[0].name}</b> !</p>
             <p>Level : ${user.skills[0].level}</p>
-            <button class="btn-book-course"><strong>Ask for a course !</strong></button>`;
+            <a href="" class="btn-book-course"><b>Ask for a course !</b></a>`;
       div.innerHTML = template;
       //div.querySelector("button").onclick = () => deleteUser(user._id); // preparing the listener for deletion
       searchBoxResult.appendChild(div); // a remplacer le premier div par la section du dessus
