@@ -20,6 +20,98 @@
     --orange: #F55721;
     --jaune: #FFBC00;
 }
+/* Partie provisoire css hugo home************************************************/
+.btn-book-course  {
+    padding: 12px;
+    background-color: var(--bleu);
+    color: white;
+    border-radius: 24px;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
+}
+
+
+#search-level {
+    width : 150px;
+    height : 40px;
+    border-radius: 24px;
+}
+
+h1 {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    margin: 50px;
+    border-radius: 24px;
+    color: var(--bleu);
+    font-size: 3em;
+}
+
+#home-global-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    width: 100%;
+    background-image: url('../img/backgrounds/bg2people.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;  
+}
+
+#search-general {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 25px;
+    border-radius: 24px;
+    flex-grow: 0;
+    overflow: auto;
+    margin-bottom: 25px;
+}
+
+#zbeulRecherche{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#zbeulRecherche p{
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+#zbeulRecherche *{
+    padding: 0px 25px;
+}
+
+#search-skill{
+    width : 200px;
+    border-radius: 24px;
+    padding : 10px;
+}
+
+#home-search-result { 
+    display: flex;
+    flex-direction: column;
+}
+
+.user-info img {
+    border-radius: 50%;
+    width: 70px ;
+    height: 70px ;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
+}
+
+.user-info {
+    background-color: white;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px;
+    margin : 25px;
+}
+
+/* PArtie provisoire css hugo home********************************************/
 
 .page-container {
     font-family: Satoshi;
@@ -28,8 +120,6 @@
     display: flex;
     background-color: var(--beige);
     display: flex;
-    
-
 }
 
 .profile-nav-bar{
