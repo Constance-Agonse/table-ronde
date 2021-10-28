@@ -39,23 +39,24 @@ app.use(
     resave: true,
   })
 );
-
-app.use((req, res, next) => {
-  req.session.currentUser = {
-    name : "Joe",
-    nickname: "SuperJoe",
-    email : "joe@joe.com",
-    phone : "12",
-    password :"multipass",
-    rates : 2,
-    _id: '617ac68d24e92864a0e6dbb1',
-    skills : ["617ac68c47106d55e55c602e",
-  "61792a6f47ab974272eaebe1",
-"61792c79ce26ab179839a215",
-"61792e0887bf08eaf2fbe38c"]
-  }
-  next()
-})
+app.use(require("./middlewares/exposeLoginStatus"));
+// app.use((req, res, next) => {
+//   req.session.currentUser = {
+//     name : "Joe",
+//     nickname: "SuperJoe",
+//     email : "joe@joe.com",
+//     phone : "12",
+//     password :"multipass",
+//     rates : 2,
+//     _id: '6179280d72c4354791750fbf',
+//     skills : ["617929c9aa824a93bf7072ed",
+//   "61792a6f47ab974272eaebe1",
+// "61792c79ce26ab179839a215",
+// "61792e0887bf08eaf2fbe38c"]
+//   }
+//   next()
+// })
+// app.use(require("./middlewares/exposeFlashMessage"));
 
 
 
@@ -89,8 +90,7 @@ app.use(function(req, res, next) {
 // flash relies on the express-session mechanism
 app.use(flash());
 
-// app.use(require("./middlewares/exposeFlashMessage"));
-// app.use(require("./middlewares/exposeLoginStatus"));
+
 
 // CUSTOM MIDDLEWARES
 app.use(function myCookieLogger(req, res, next) {

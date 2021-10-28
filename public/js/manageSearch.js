@@ -19,16 +19,6 @@ function searchSkill(evt) {
 
 searchBar.oninput = searchSkill;
 
-
-function displaySkill(users) {
-  users.forEach((element) => {
-    divTest.innerHTML = `this is : ${element.name} ${element.skills[0].name} 
-    
-    `;
-    // ${JSON.stringify( element.skills[0].name)}
-  });
-}
-
 const handleInput = (evt) => {
   searchObject.search = evt.target.value;
   searchSkill();

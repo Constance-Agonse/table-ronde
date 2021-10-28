@@ -13,7 +13,7 @@ router.get("/signup", (req, res, next) => {
 
 router.get("/signout", (req, res, next) => {
   req.session.destroy(function (err) {
-    res.redirect("auth/signin");
+    res.redirect("/auth/signin");
   });
 });
 
@@ -23,17 +23,17 @@ router.post("/signin", async (req, res, next) => {
     const foundUser = await UserModel.findOne({ email: email });
     if (!foundUser) {
       //insert req.flash here
-      res.redirect("auth/signin");
+      res.redirect("/auth/signin");
     } else {
       const isSamePassword = bcrypt.compareSync(password, foundUser.password);
       if (!isSamePassword) {
         //insert flash here
-        res.redirect("auth/signin");
+        res.redirect("/auth/signin");
       } else {
         const userSession = foundUser.toObject();
         delete userSession.password;
 
-        req.session.currentUSer = userSession;
+        req.session.currentUser = userSession;
 
         //insert Flash here
         res.redirect("/profile"); // might change the destination
