@@ -4,37 +4,105 @@
 
 
 <div class="profile-right-block">
-    <h1>Welcome ! </h1>
-
-
-    <div>
+    <div class="block-current-exchanges-container">
         <div class="courses-taken">
-            <h2>Courses taken</h2>
+            <h2 class="sub-title">Courses taken</h2>
             <div class="champData">
                 {{#unless courseTaken.length}}
                 <p>No studying courses booked yet !</p>
-                {{/unless}}
-                {{#each courseTaken}}
-                <p class="activity">Activity : {{this.skillsName.name}} </p>
-                <p class="teacher">Teacher : {{this.teacher.name}} </p>
-                <p class="details">Details :{{this._id}} </p>
-                <p class="Status">Status : {{this.exchangeStatus}} </p>
 
-                <button class="lesson-done"><a href="/profile/finished/lessontaken/{{this._id}}">Lesson
-                        done</a></button>
-                <button class="cancel"><a href="/profile/cancel/lessontaken/{{this._id}}">Cancel lesson</a></button>
-                {{/each}}
+
+                {{else}}
+
+                <table class="course-table">
+                    <thead class="course-table-head">
+                        <tr class="course-table-line">
+                            <th>Activity</th>
+                            <th>Teacher</th>
+                            <th>Details</th>
+                            <th>Status</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each courseTaken}}
+                        <tr class="course-table-line">
+                            <td>
+                                <p class="activity">{{this.skillsName.name}} </p>
+                            </td>
+                            <td>
+                                <p class="teacher">{{this.teacher.name}}</p>
+                            </td>
+                            <td>
+                                <p class="details">{{this._id}}</p>
+                            </td>
+                            <td>
+                                <p class="Status">{{this.exchangeStatus}} </p>
+                            </td>
+                            <td><a class="course-button" href="/profile/finished/lessontaken/{{this._id}}">Lesson
+                                    done</a></td>
+                            <td><a class="course-button" href="/profile/cancel/lessontaken/{{this._id}}">Cancel
+                                    lesson</a></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                {{/unless}}
+
+
+
+
+
+
             </div>
-            <div class="courses-given">
-                <div class="champData">
-                    <h2>Courses given</h2>
-                    {{#unless courseGiven.length}}
-                    <p>No given courses booked yet !</p>
+        </div>
+
+
+
+
+        <div class="courses-given">
+            <div class="champData">
+                <h2 class="sub-title">Courses given</h2>
+                {{#unless courseGiven.length}}
+                <p>No given courses booked yet !</p>
+
+                {{else}}
+                <table class="course-table">
+                    <thead class="course-table-head">
+                        <tr class="course-table-line">
+                            <th>Activity</th>
+                            <th>Student</th>
+                            <th>Details</th>
+                            <th>Status</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each courseGiven}}
+                        <tr class="course-table-line">
+                            <td>
+                                <p class="activity">{{this.skillsName.name}} </p>
+                            </td>
+                            <td>
+                                <p class="teacher">{{this.student.name}}</p>
+                            </td>
+                            <td>
+                                <p class="details">{{this._id}}</p>
+                            </td>
+                            <td>
+                                <p class="Status">{{this.exchangeStatus}} </p>
+                            </td>
+                            <td><a class="course-button" href="/profile/approve/lessongiven/{{this._id}}">Approve this
+                                    leson</a></td>
+                            <td><a class="course-button" href="/profile/cancel/lessongiven/{{this._id}}">Cancel
+                                    lesson</a></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
                     {{/unless}}
-                    {{#each courseGiven}}
-                    <p class="activity">Activity : {{this.skillsName.name}} </p>
-                    <p class="student">Student : {{this.student.name}} </p>
-                    <p class="details">Details : </p>
+
                     {{!-- <form method="post" action="/profile/update/">
                         <label for="select-status"></label>
                         <select id="select-status" name="exchangeStatus">
@@ -43,15 +111,11 @@
                         </select>
                         <button>Update</button>
                     </form> --}}
-                    <p class="Status">Status : {{this.exchangeStatus}} </p>
 
-                    <button class="lesson-approved"><a href="/profile/approve/lessongiven/{{this._id}}">Approve this
-                            leson</a></button>
-                    <button class="cancel"><a href="/profile/cancel/lessongiven/{{this._id}}">Cancel lesson</a></button>
-                    {{/each}}
-                </div>
+
             </div>
-
         </div>
+
     </div>
+</div>
 </div>
