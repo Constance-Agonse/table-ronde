@@ -27,6 +27,12 @@
     color: white;
     border-radius: 24px;
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
+    
+}
+
+.btn-book-course:hover{
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 70, 130, 1);
 }
 
 
@@ -36,13 +42,17 @@
     border-radius: 24px;
 }
 
-h1 {
+#title-box{
     background-color: rgba(255, 255, 255, 0.7);
-    padding: 10px;
+    padding: 25px 53px;
     margin: 50px;
     border-radius: 24px;
+}
+
+#title-box h1 {    
     color: var(--bleu);
     font-size: 3em;
+    font-weight: bold;
 }
 
 #home-global-container {
@@ -109,6 +119,10 @@ h1 {
     align-items: center;
     padding: 25px;
     margin : 25px;
+}
+
+.user-info b {
+    font-weight: bold;
 }
 
 /* PArtie provisoire css hugo home********************************************/
