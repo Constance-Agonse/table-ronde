@@ -10,6 +10,32 @@
     /* box-sizing: border-box;
     margin: 0;
     padding: 0; */
-    font-family: Satoshi;
 }
 
+:root {
+    --rose: #FCA6A2;
+    --bleu: #0059A6;
+    --beige: #FFECC1;
+    --vert: #00885C;
+    --orange: #F55721;
+    --jaune: #FFBC00;
+}
+
+.page-container {
+    font-family: Satoshi;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: var(--beige);
+    display: flex;
+    
+
+}
+
+.profile-nav-bar{
+
+}
+
+.profile-right-block{
+
+}

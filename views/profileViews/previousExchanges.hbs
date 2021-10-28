@@ -1,28 +1,34 @@
-<h1>Welcome to your previous exchange {{user.name}} </h1>
-{{>profileNavBar}}
+<div class="profile-nav-bar">
+    {{> profileNavBar}}
+    <h1>hey</h1>
+</div>
 
-<div class="hbsChangingPage">
-    <div class="coursDonne"> Lesson given
-        <div class="champData">
-            {{#unless isProf.length }}
+
+<div class="profile-right-block">
+    <h1>Welcome to your previous exchanges {{user.name}} </h1>
+    <div class="hbsChangingPage">
+        <div class="coursDonne"> Lesson given
+            <div class="champData">
+                {{#unless isProf.length }}
                 <p>You gave no course yet {{isProf.teacher.name}}</p>
-            {{/unless}}
-            {{#each isProf}}
-                <p class="activity" > <strong>Activity :</strong> {{this.skillsName.name}} </p>
+                {{/unless}}
+                {{#each isProf}}
+                <p class="activity"> <strong>Activity :</strong> {{this.skillsName.name}} </p>
                 <p class="student"><strong>Student :</strong> {{this.student.name}} </p>
-            {{/each}}
+                {{/each}}
+            </div>
         </div>
-    </div>
-    <div class="coursPris">
-        <div class="champData"> Lesson taken
-            {{#unless isStudent.length}}
+        <div class="coursPris">
+            <div class="champData"> Lesson taken
+                {{#unless isStudent.length}}
                 <p>You followed no course yet {{isStudent.student.name}}</p>
-            {{/unless}}
-            {{#each isStudent}}
-            <p class="activity"><strong>Activity :</strong> {{this.skillsName.name}} </p>
-            <p class="student"><strong>Teacher :</strong> {{this.teacher.name}} </p>            
-            <a href="/profile/rebook/{{_id}}" class="rebooker">Rebooker</a>
-            {{/each}}
+                {{/unless}}
+                {{#each isStudent}}
+                <p class="activity"><strong>Activity :</strong> {{this.skillsName.name}} </p>
+                <p class="student"><strong>Teacher :</strong> {{this.teacher.name}} </p>
+                <a href="/profile/rebook/{{_id}}" class="rebooker">Rebooker</a>
+                {{/each}}
+            </div>
         </div>
     </div>
 </div>

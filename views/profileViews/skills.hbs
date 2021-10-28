@@ -1,23 +1,31 @@
-<h2>Your skills</h2>
-
-<ul>
-    {{#each user.skills}}
-    <li>
-        <p>{{this.name}}</p>
-        <p>{{this.level}}</p>
-        <p>{{this.category}}</p>
-        <a href="skills/delete/{{this._id}}">Delete</a>
-        <a href="skills/edit/{{this._id}}">Edit</a>
-    </li>
-    {{/each}}
-</ul>
+<div id="profile-nav-bar">
+    {{> profileNavBar}}
+</div>
 
 
-{{#unless user.skills}}
-<p>No skills yet?</p>
-{{/unless}}
-<p>Add your skills to join the community!</p>
-<a href="skills/create">Add skill</a>
+<div id="profile-right-block">
+
+    <h2>Your skills</h2>
+
+    <ul>
+        {{#each user.skills}}
+        <li>
+            <p>{{this.name}}</p>
+            <p>{{this.level}}</p>
+            <p>{{this.category}}</p>
+            <a href="skills/delete/{{this._id}}">Delete</a>
+            <a href="skills/edit/{{this._id}}">Edit</a>
+        </li>
+        {{/each}}
+    </ul>
 
 
-    {{!-- inserer les liens pour delete and edit + add skill --}}
+    {{#unless user.skills}}
+    <p>No skills yet?</p>
+    {{/unless}}
+    <p>Add your skills to join the community!</p>
+    <a href="skills/create">Add skill</a>
+</div>
+
+
+{{!-- inserer les liens pour delete and edit + add skill --}}

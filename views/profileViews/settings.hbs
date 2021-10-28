@@ -1,4 +1,9 @@
-{{> profileNavBar}}
+<div id="profile-nav-bar">
+    {{> profileNavBar}}
+</div>
+
+
+<div id="profile-right-block">
 
 {{#each userInfo}}
 <p>name :{{this.name}}</p>
@@ -6,3 +11,4 @@
 <p>email :{{this.email}}</p>
 {{/each}}
 <p>hours  :{{userHours}}</p>
+</div>
