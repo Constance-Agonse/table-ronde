@@ -8,9 +8,40 @@ router.get("/", (req, res, next) => {
   res.render("./home-search/home");
 });
 
-router.get("/askCourse", async (req, res, next) => {
-  try {    
+router.get("/askCourse/:id", async (req, res, next) => {
+  try {   
+    console.log("XXXXXXXXXXXXXXXXXXXX") 
+    console.log(req.params.id);
+    const userToBook = await UserModel.findById(req.params.id).populate("skills")
+    console.log(userToBook.skills)
+    console.log(userToBook.skills[0]._id) //id du skill
+    
+    console.log(userToBook._id) //id du mec
+    console.log("la")
+    const skillsToBook = await SkillsModel.findById(userToBook.skills[0]._id)
+    console.log(skillsToBook)
+    // Création d'un clone pour modifier les infos
+    const {_doc: clone } = {...skillsToBook}
+    console.log("dang");
+    console.log(req.body) // rien dedans
 
+
+
+    // version pas chantier
+    const userToBook = await UserModel.findById(req.params.id).populate("skills")
+    const skillsToBook = await SkillsModel.findById(userToBook.skills[0]._id)
+    const bookExchange = await ExchangesModel.find({ teacher : req.params.id, student : req.session.currentUser._id, skillsName : userToBook.skills[0]._id ) //pas besoin de cloner je pense qu'on peut le faire direct
+    
+
+    
+    // CREATION de l'exchange
+    clone.teacher = req.params.id;
+    clone.student =  req.session.currentUser._id;
+    clone.skillsName = userToBook.skills[0]._id ;
+    clone.exchangeStatus = "in progress";
+    // fin creation
+
+    
     if(req.session.currentUser) {
       
       res.redirect("/profile");
@@ -22,6 +53,13 @@ router.get("/askCourse", async (req, res, next) => {
     next(error)
   }
 })
+
+// const courseToRebook = await ExchangesModel.findById(req.params.id);
+//     const {_doc: clone} = {...courseToRebook};
+//     delete clone._id;
+//     clone.exchangeStatus = "in progress"
+//     console.log(clone);
+//     await ExchangesModel.create(clone)
 
 //A SUPPRIMER EN DESSOUS *******************************************************
 router.post("/signin", async (req, res, next) => {
