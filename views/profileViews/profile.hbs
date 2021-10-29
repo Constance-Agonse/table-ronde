@@ -10,7 +10,7 @@
      </div>
     <div class="block-current-exchanges-container">
         <div class="courses-taken">
-            <h2 class="sub-title">Courses taken</h2>
+            <h2 class="sub-title">Community teaching demand ...</h2>
             <div class="champData">
                 {{#unless courseTaken.length}}
                 <p>No studying courses booked yet !</p>
@@ -65,7 +65,7 @@
 
         <div class="courses-given">
             <div class="champData">
-                <h2 class="sub-title">Courses given</h2>
+                <h2 class="sub-title">Your studying request ...</h2>
                 {{#unless courseGiven.length}}
                 <p>No given courses booked yet !</p>
 
@@ -85,13 +85,13 @@
                         {{#each courseGiven}}
                         <tr class="course-table-line">
                             <td>
-                                <p class="activity">{{this.skillsName.name}} </p>
+                                <p class="activity">{{this.skillsName.name}}</p>
                             </td>
                             <td>
-                                <p class="teacher">{{this.student.name}}</p>
+                                <p class="teacher">{{this.teacher.name}}</p>
                             </td>
                             <td>
-                                <p class="details">{{this.phone}}</p>
+                                <p class="details">{{this.teacher.phone}}</p>
                             </td>
                             <td>
                                 <p class="Status">{{this.exchangeStatus}} </p>

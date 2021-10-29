@@ -23,6 +23,8 @@ router.post("/signin", async (req, res, next) => {
     const { email, password } = req.body;
     const foundUser = await UserModel.findOne({ email: email });
     if (!foundUser) {
+      console.log("EEREURER")
+
       req.flash("error", "Invalid credentials");
       res.redirect("/auth/signin");
     } else {

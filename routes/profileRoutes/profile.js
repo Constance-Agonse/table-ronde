@@ -13,8 +13,7 @@ router.get('/', async (req,res,next) => {
         const courseTaken =  await ExchangesModel.find({ teacher : req.session.currentUser._id, exchangeStatus : { $ne : "done" } }).populate("teacher").populate("skillsName")
         const courseGiven =  await ExchangesModel.find({ student : req.session.currentUser._id, exchangeStatus : { $ne : "done" } }).populate("teacher").populate("skillsName")
         // console.log(courseTaken);
-        
-        console.log(courseTaken);
+
 
         res.render("./profileViews/profile.hbs", {courseTaken, courseGiven, user, page: 'profile' })
     } catch (err) {
