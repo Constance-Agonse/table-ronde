@@ -15,17 +15,6 @@ router.get("/askCourse/:teacher/:skill", async (req, res, next) => {
     console.log("skill");
     console.log(req.params.skill);
     console.log(req.session.currentUser._id)
-
-     
-
-    
-    // CREATION de l'exchange
-    clone.teacher = req.params.id;
-    clone.student =  req.session.currentUser._id;
-    clone.skillsName = userToBook.skills[0]._id ;
-    clone.exchangeStatus = "in progress";
-    // fin creation
-
     
     if(req.session.currentUser) {
       
@@ -45,55 +34,6 @@ router.get("/askCourse/:teacher/:skill", async (req, res, next) => {
   }
 })
 
-// const courseToRebook = await ExchangesModel.findById(req.params.id);
-//     const {_doc: clone} = {...courseToRebook};
-//     delete clone._id;
-//     clone.exchangeStatus = "in progress"
-//     console.log(clone);
-//     await ExchangesModel.create(clone)
-
-//A SUPPRIMER EN DESSOUS *******************************************************
-router.post("/signin", async (req, res, next) => {
-  // DO something
-  //   res.render("auth/signin.hbs");
-  try {
-    const { email, password } = req.body;
-    const foundUser = await User.findOne({ email: email });
-
-    if (!foundUser) {
-      //   Display an error message telling the user that either the password
-      // or the email is wrong
-      req.flash("error", "Invalid credentials");
-      res.redirect("/auth/signin");
-    } else {
-      // https://www.youtube.com/watch?v=O6cmuiTBZVs
-      const isSamePassword = bcrypt.compareSync(password, foundUser.password);
-      if (!isSamePassword) {
-        // Display an error message telling the user that either the password
-        // or the email is wrong
-        req.flash("error", "Invalid credentials");
-        res.redirect("/auth/signin");
-      } else {
-        // everything is fine so :
-        // Authenticate the user...
-        const userObject = foundUser.toObject(); // needed to convert mongoose object to classic js object
-        delete userObject.password; // remove password before saving user in session
-        // console.log(req.session, "before defining current user");
-        req.session.currentUser = userObject;
-        // above: Store the user in the session (data server side + a cookie is sent client side)
-
-        // https://www.youtube.com/watch?v=nvaE_HCMimQ
-        // https://www.youtube.com/watch?v=OFRjZtYs3wY
-
-        req.flash("success", "Successfully logged in...");
-        res.redirect("/profile");
-      }
-    }
-  } catch (err) {
-    next(err);
-  }
-});
-//ASUPPRIMER AU DESSUS ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 router.get("/search", async function (req, res, next) {
