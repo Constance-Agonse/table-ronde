@@ -10,10 +10,10 @@
     </div>
     <div class="skills-block">
         {{#each userInfo}}
-        <p class="user-infos">Name :{{this.name}}</p>
-        <p class="user-infos">Nickname :{{this.nickname}}</p>
-        <p class="user-infos">Email :{{this.email}}</p>
+        <p class="user-infos"> <span class="boldy"> Name: </span>{{this.name}}</p>
+        <p class="user-infos"> <span class="boldy"> Nickname: </span>{{this.nickname}}</p>
+        <p class="user-infos"> <span class="boldy"> Email: </span>{{this.email}}</p>
         {{/each}}
-        <p class="user-infos">Hours :{{userHours}}</p>
+        <p class="user-infos"><span class="boldy">Hours: </span>{{userHours}}</p>
     </div>
 </div>

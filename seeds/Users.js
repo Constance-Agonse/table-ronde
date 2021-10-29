@@ -10,7 +10,7 @@ const userSeed = [
     name : "Flo",
     nickname: "SuperFlo",
     email : "flo@flo.com",
-    phone : "12",
+    phone : "07 66 77 77 66",
     password :"multipass",
     rates : 5,
     profilPicture: '/img/profilepics/profilepic2.png'
@@ -19,7 +19,7 @@ const userSeed = [
     name : "Bob",
     nickname: "SuperBob",
     email : "bob@bob.com",
-    phone : "515",
+    phone : "06 76 45 45 45",
     password :"multipass",
     rates : 3,
     profilPicture: '/img/profilepics/profilepic3.png'
@@ -28,7 +28,7 @@ const userSeed = [
     name : "Tim",
     nickname: "SuperTim",
     email : "tim@tim.com",
-    phone : "858",
+    phone : "06 66 77 77 66",
     password :"multipass",
     rates : 4,
     profilPicture:'/img/profilepics/profilepic6.png'
@@ -37,7 +37,7 @@ const userSeed = [
     name : "John",
     nickname: "SuperJohn",
     email : "john@john.com",
-    phone : "585",
+    phone : "06 66 66 66 66",
     password :"multipass",
     rates : 5,
     profilPicture:'/img/profilepics/profilepic3.png'
@@ -46,7 +46,7 @@ const userSeed = [
     name : "Maxime",
     nickname: "SuperMax",
     email : "max@maxx.com",
-    phone : "785",
+    phone : "07 77 67 67 67",
     password :"multipass",
     rates : 1,
     profilPicture:'/img/profilepics/profilepic2.png'
@@ -55,7 +55,7 @@ const userSeed = [
     name : "Micheline",
     nickname: "SuperMicheline",
     email : "micheline@micheline.com",
-    phone : "12",
+    phone : "06 66 66 66 98",
     password :"multipass",
     rates : 2,
     profilPicture:'/img/profilepics/profilepic1.png'
@@ -64,7 +64,7 @@ const userSeed = [
     name : "Aurore",
     nickname: "Aurore",
     email : "aurore@aurore.com",
-    phone : "12",
+    phone : "06 66 77 77 77",
     password :"multipass",
     rates : 2,
     profilPicture:"/img/profilepics/profilepic5.png"
@@ -73,16 +73,16 @@ const userSeed = [
     name : "Isabella",
     nickname: "Isa",
     email : "isabella@isabella.com",
-    phone : "12",
+    phone : "06 88 88 88 88",
     password :"multipass",
     rates : 2,
     profilPicture:"/img/profilepics/profilepic4.png"
 },
 {
-    name : "Elisabeth",
-    nickname: "Babeth",
-    email : "babeth@babeth.com",
-    phone : "12",
+    name : "Yuki",
+    nickname: "Yuki",
+    email : "yuki@yuki.com",
+    phone : "06 33 88 88 98",
     password :"multipass",
     rates : 2,
     profilPicture:"/img/profilepics/profilepic7.png"
@@ -93,7 +93,7 @@ const userSeed = [
     name : "Joe",
     nickname: "SuperJoe",
     email : "joe@joe.com",
-    phone : "12",
+    phone : "06 88 88 88 88",
     password :"multipass",
     rates : 2,
     profilPicture:"/img/profilepics/profilepic2.png"

@@ -4,6 +4,7 @@ const UserModel = require("../models/Users");
 const ExchangesModel = require("../models/Exchanges");
 const SkillsModel = require("../models/Skills");
 
+
 router.get("/", (req, res, next) => {
   res.render("./home-search/home");
 });

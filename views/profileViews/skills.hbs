@@ -5,8 +5,8 @@
 
 <div class="profile-right-block">
     <div id="partials" class="partial-login-logout">
-     {{> profileLoginNavBar}}
-     </div>
+        {{> profileLoginNavBar}}
+    </div>
     <div class="skills-block">
         {{#unless user.skills}}
         <p class="sub-title">No skills yet?</p>
@@ -14,7 +14,7 @@
         {{else}}
 
 
-        {{#each user.skills}}
+
         <table class="course-table">
             <thead class="course-table-head">
                 <tr class="course-table-line">
@@ -26,6 +26,7 @@
                 </tr>
             </thead>
             <tbody>
+                {{#each user.skills}}
 
                 <tr class="course-table-line">
                     <td>
@@ -45,10 +46,10 @@
                         <a href="skills/edit/{{this._id}}"><img width="28" src="/img/icons/pen.png" alt="edit"></a>
                     </td>
                 </tr>
-
+                {{/each}}
             </tbody>
         </table>
-        {{/each}}
+
 
 
 

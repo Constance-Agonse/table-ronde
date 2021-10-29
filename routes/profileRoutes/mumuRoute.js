@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const UserModel = require('./../../models/Users');
 const ExchangesModel = require("./../../models/Exchanges");
+const protectRoute = require("./../../middlewares/protectRoute")
 
 
-router.get('/settings', async (req, res, next) => {
+router.get('/settings',protectRoute, async (req, res, next) => {
     try {
         console.log(req.session.currentUser._id)
         const user = await UserModel.findById(req.session.currentUser._id);

@@ -11,7 +11,7 @@ const testSkill = [
     {
         name: "javascript",
         level: "intermediate",
-        category: "computer science"
+        category: "computerScience"
     },
     {
         name: "yoga",
@@ -27,7 +27,43 @@ const testSkill = [
         name: "pastry",
         level: "expert",
         category: "cooking"
-    }
+    },
+    {
+        name: "html",
+        level: "expert",
+        category: "computerScience"
+    },
+    {
+        name: "css",
+        level: "expert",
+        category: "computerScience"
+    },
+    {
+        name: "botanic",
+        level: "expert",
+        category: "gardening"
+    },
+    {
+        name: "build a bird house",
+        level: "expert",
+        category: "do-it-yourself"
+    },
+    {
+        name: "lasagnas like Paul",
+        level: "expert",
+        category: "cooking"
+    },
+    {
+        name: "build a wooden bench ",
+        level: "intermediate",
+        category: "do-it-yourself"
+    },
+    {
+        name: "psychology",
+        level: "expert",
+        category: "wellness"
+    },
+
 ];
 
 
