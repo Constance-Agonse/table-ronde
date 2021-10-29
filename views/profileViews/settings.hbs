@@ -1,18 +1,19 @@
 <div id="profile-nav-bar">
     {{> profileNavBar}}
-    
+
 </div>
 
 
-<div id="profile-right-block">
+<div class="profile-right-block">
     <div class="partial-login-logout">
-     {{> profileLoginNavBar}}
-     </div>
-
-{{#each userInfo}}
-<p>name :{{this.name}}</p>
-<p>Nickname :{{this.nickname}}</p>
-<p>email :{{this.email}}</p>
-{{/each}}
-<p>hours  :{{userHours}}</p>
+        {{> profileLoginNavBar}}
+    </div>
+    <div class="skills-block">
+        {{#each userInfo}}
+        <p class="user-infos">Name :{{this.name}}</p>
+        <p class="user-infos">Nickname :{{this.nickname}}</p>
+        <p class="user-infos">Email :{{this.email}}</p>
+        {{/each}}
+        <p class="user-infos">Hours :{{userHours}}</p>
+    </div>
 </div>

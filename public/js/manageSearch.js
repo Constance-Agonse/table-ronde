@@ -44,11 +44,14 @@ function displayUsers(users) {
       // create one div per skill containing multiple element > skill's infos
       const div = document.createElement("div");
       div.setAttribute("class","user-info"); // seting the skill's id on the tr so we can use it later for deletion
+      console.log("==================1================")      
+      console.log(user.skill)
+      console.log("==================2================")
       const template = `       
             <img src="${user.profilPicture}" alt="${user._id}"></img>
             <p class="resultText">${user.name} can teach you : <b>${user.skills[0].name}</b> !</p>
             <p>Level : <b>${user.skills[0].level}</b></p>
-            <a href="/home/askCourse" class="btn-book-course">Ask for a course !</a>`;
+            <a href="/home/askCourse/${user._id}/${user.skills[0]._id}" class="btn-book-course">Ask for a course !</a>`;
       div.innerHTML = template;
       //div.querySelector("button").onclick = () => deleteUser(user._id); // preparing the listener for deletion
       searchBoxResult.appendChild(div); // a remplacer le premier div par la section du dessus

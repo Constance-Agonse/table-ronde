@@ -8,13 +8,27 @@ router.get("/", (req, res, next) => {
   res.render("./home-search/home");
 });
 
-router.get("/askCourse", async (req, res, next) => {
+router.get("/askCourse/:teacher/:skill", async (req, res, next) => {
   try {    
-    
-    if(req.session.currentUser){
+    console.log("teacher");
+    console.log(req.params.teacher);
+    console.log("skill");
+    console.log(req.params.skill);
+    console.log(req.session.currentUser._id)
 
+     
+
+    if(req.session.currentUser) {
       
+      await ExchangesModel.create({
+        teacher : req.params.teacher,
+        student : req.session.currentUser._id,
+        skillsName : req.params.skill,
+        exchangeStatus : "in progress",
+      })
       res.redirect("/profile");
+    } else {
+      res.redirect("/auth/signin")
     }
     
   } catch (error) {
@@ -22,7 +36,7 @@ router.get("/askCourse", async (req, res, next) => {
   }
 })
 
-//ASUPPRIMER EN DESSOUS
+//A SUPPRIMER EN DESSOUS *******************************************************
 router.post("/signin", async (req, res, next) => {
   // DO something
   //   res.render("auth/signin.hbs");
@@ -63,7 +77,7 @@ router.post("/signin", async (req, res, next) => {
     next(err);
   }
 });
-
+//ASUPPRIMER AU DESSUS ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 router.get("/search", async function (req, res, next) {

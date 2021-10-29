@@ -21,8 +21,13 @@ router.get("/", async (req, res, next) => {
 // //attention, les skills create sont propres à chaque utilisateur car on set le niveau 
 
 
-router.get("/create", async function (req, res, next) {
-    res.render("profileViews/skillCreate.hbs",);
+router.get("/create", async  (req, res, next) => {
+    try{
+    const user = await userModel.findById(req.session.currentUser._id);
+    res.render("profileViews/skillCreate.hbs", {user} )}
+    catch (err){
+        next(err);
+    }
 });
 
 router.post("/create", async (req, res, next) => {
