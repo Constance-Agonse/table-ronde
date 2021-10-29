@@ -8,30 +8,15 @@ router.get("/", (req, res, next) => {
   res.render("./home-search/home");
 });
 
-router.get("/askCourse/:id", async (req, res, next) => {
-  try {   
-    console.log("XXXXXXXXXXXXXXXXXXXX") 
-    console.log(req.params.id);
-    const userToBook = await UserModel.findById(req.params.id).populate("skills")
-    console.log(userToBook.skills)
-    console.log(userToBook.skills[0]._id) //id du skill
-    
-    console.log(userToBook._id) //id du mec
-    console.log("la")
-    const skillsToBook = await SkillsModel.findById(userToBook.skills[0]._id)
-    console.log(skillsToBook)
-    // Création d'un clone pour modifier les infos
-    const {_doc: clone } = {...skillsToBook}
-    console.log("dang");
-    console.log(req.body) // rien dedans
+router.get("/askCourse/:teacher/:skill", async (req, res, next) => {
+  try {    
+    console.log("teacher");
+    console.log(req.params.teacher);
+    console.log("skill");
+    console.log(req.params.skill);
+    console.log(req.session.currentUser._id)
 
-
-
-    // version pas chantier
-    const userToBook = await UserModel.findById(req.params.id).populate("skills")
-    const skillsToBook = await SkillsModel.findById(userToBook.skills[0]._id)
-    const bookExchange = await ExchangesModel.find({ teacher : req.params.id, student : req.session.currentUser._id, skillsName : userToBook.skills[0]._id ) //pas besoin de cloner je pense qu'on peut le faire direct
-    
+     
 
     
     // CREATION de l'exchange
@@ -44,6 +29,12 @@ router.get("/askCourse/:id", async (req, res, next) => {
     
     if(req.session.currentUser) {
       
+      await ExchangesModel.create({
+        teacher : req.params.teacher,
+        student : req.session.currentUser._id,
+        skillsName : req.params.skill,
+        exchangeStatus : "in progress",
+      })
       res.redirect("/profile");
     } else {
       res.redirect("/auth/signin")

@@ -39,19 +39,24 @@
     height: 70px;
     left: 0px;
     margin-bottom: 50px;
-    padding: 16px 24px 16px 0;
+    padding: 16px 24px 16px 54px;
     line-height: 4.5;
+    margin-left: -50px;
 }
 
 .nav-bar-a.is-active {
-    background: linear-gradient(270deg, #608BB0 24.56%, rgba(96, 139, 176, 0) 117.16%);
+    background-color: var(--orange);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 0px 24px 24px 0px;
 }
 
 .nav-bar-a:hover {
-    background: linear-gradient(270deg, #608BB0 24.56%, rgba(96, 139, 176, 0) 117.16%);
+    background-color: var(--rose);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 0px 24px 24px 0px;
+    color: var(--bleu);
 }
 
+.user-infos {
+    line-height: 2.5;
+}
