@@ -4,16 +4,16 @@
 
 
 <div class="profile-right-block">
-    <div class="partial-login-logout">
+    <div id="partials" class="partial-login-logout">
         {{> profileLoginNavBar}}
     </div>
     <div class="skills-block">
         <form method="post" action="/profile/skills/create" class="form">
             <h2>Add a new skill</h2>
             <label class="label">Skill: </label>
-            <input class="input" type="text" name="name" />
-            <label for="category" class="label">Category</label>
-            <select name="category" id="category">
+            <input class="search-skill-edit" type="text" name="name" />
+            <label for="category" class="label">Category: </label>
+            <select class="search-sliding" name="category" id="category">
                 <option value="gardening">gardening</option>
                 <option value="sports">sports</option>
                 <option value="mechanics">mechanics</option>
@@ -24,15 +24,15 @@
                 <option value="wellness">wellness</option>
                 <option value="do-it-yourself">do-it-yourself</option>
             </select>
-            <label for="level" class="label">Level</label>
-            <select name="level" id="level">
+            <label for="level">Level: </label>
+            <select class="search-sliding" name="level" id="level">
                 <option value="starter">starter</option>
                 <option value="elementary">elementary</option>
                 <option value="intermediate">intermediate</option>
                 <option value="advanced">advanced</option>
                 <option value="expert">expert</option>
             </select>
-            <button class="button">Add!</button>
+            <button class="button-action">Add!</button>
 
         </form>
     </div>

@@ -47,7 +47,8 @@ router.post("/create",protectRoute, async (req, res, next) => {
 router.get("/edit/:id",protectRoute, async  (req, res, next)  => {
     try {
         const skill = await skillModel.findById(req.params.id);
-        res.render("profileViews/skillEdit.hbs", { skill })
+        const user = await userModel.findByIdAndUpdate(req.session.currentUser._id)
+        res.render("profileViews/skillEdit.hbs", { skill, user })
     } catch (err) {
         next(err);
     }

@@ -4,7 +4,7 @@
 
 
 <div id="profile-right-block">
-    <div class="partial-login-logout">
+    <div id="partials" class="partial-login-logout">
      {{> profileLoginNavBar}}
      </div>
 
@@ -13,7 +13,7 @@
         <label class="label">Name</label>
         <input class="input-skill-edit" type="text" name="name" value="{{skill.name}}" />
         <label for="category" class="label">Category</label>
-        <select class="search-skill-edit"name="category" id="category">
+        <select class="search-sliding"name="category" id="category">
             <option value="-1" disabled selected>{{skill.category}}</option>
             <option value="gardening">gardening</option>
             <option value="sports">sports</option>
@@ -27,7 +27,7 @@
             <option value="other">other</option>
         </select>
         <label for="level" class="label">Level</label>
-        <select class="search-skill-edit" name="level" id="level">
+        <select class="search-sliding" name="level" id="level">
             <option value="-1" disabled selected>{{skill.level}}</option>
             <option value="starter">starter</option>
             <option value="elementary">elementary</option>

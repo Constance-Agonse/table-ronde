@@ -29,40 +29,41 @@
     color: white;
     border-radius: 24px;
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
-    
+
 }
 
-.btn-book-course:hover{
+.btn-book-course:hover {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     background-color: rgba(0, 70, 130, 1);
 }
 
-#partials{
+#partials {
     position: absolute;
-    top: 20px; 
+    top: 20px;
     right: 40px;
 }
 
-#partials nav{
-    background-color: rgba(255, 255, 255, 0.7);  
+#partials nav {
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
-    padding : 12px 20px;
+    padding: 12px 20px;
 }
 
 #search-level {
     width: 150px;
     height: 40px;
     border-radius: 24px;
+    border: none;
 }
 
-#title-box{
+#title-box {
     background-color: rgba(255, 255, 255, 0.7);
     padding: 25px 53px;
     margin: 50px;
     border-radius: 24px;
 }
 
-#title-box h1 {    
+#title-box h1 {
     color: var(--bleu);
     font-size: 3em;
     font-weight: bold;
@@ -108,6 +109,7 @@
     width: 200px;
     border-radius: 24px;
     padding: 10px;
+    border: none;
 }
 
 #home-search-result {
@@ -250,28 +252,113 @@
     padding: 24px;
     margin-top: 100px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    opacity: 0.85;
 
 }
 
-.add-a-skill-btn{
+.add-a-skill-btn {
     background-color: var(--orange);
     border-radius: 24px;
     padding: 12px 24px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: -30%;
 
-/* display: block; */
-  /* margin-left: auto;
-  margin-right: auto; */
 }
 
-.input-skill-edit{
+.input-skill-edit {
     width: 200px;
     border-radius: 24px;
     padding: 10px;
+    border: none;
 }
 
 .search-skill-edit {
     width: 150px;
     height: 40px;
     border-radius: 24px;
+    border: none;
+}
+
+.search-sliding {
+    width: 150px;
+    height: 40px;
+    border-radius: 24px;
+    border: none;
+}
+
+.button-action {
+    border-radius: 24px;
+    height: 40px;
+    width: 80px;
+    background-color: var(--orange);
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 1s;
+    transition: all ease-in-out .1s;
+    border: none;
+
+}
+
+.button-action:hover {
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    background-color: rgba(	245,87,33, 0.75);
+}
+
+
+.sign-block {
+    width: 800px;
+    margin: auto;
+    background-color: var(--vert);
+    opacity: 0.85;
+    border-radius: 24px;
+    padding: 24px;
+    margin-top: 200px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    line-height: 2.5;
+}
+
+.sign-in-bg {
+    width: 100%;
+    background-image: url('../img/backgrounds/bg2people2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.sign-in-up-btn {
+    background-color: var(--jaune);
+    border-radius: 24px;
+    padding: 6px 12px;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 1s;
+    transition: all ease-in-out .1s;
+
+}
+
+.sign-in-btn {
+    bottom: -20%;
+}
+
+.sign-up-btn {
+    bottom: -40%;
+}
+
+
+.sign-in-up-btn:hover {
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 188, 0, 0.75);
+
+}
+
+.sign-in-center {
+    text-align: center;
 }

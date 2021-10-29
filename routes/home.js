@@ -19,6 +19,15 @@ router.get("/askCourse/:teacher/:skill", async (req, res, next) => {
 
      
 
+    
+    // CREATION de l'exchange
+    clone.teacher = req.params.id;
+    clone.student =  req.session.currentUser._id;
+    clone.skillsName = userToBook.skills[0]._id ;
+    clone.exchangeStatus = "in progress";
+    // fin creation
+
+    
     if(req.session.currentUser) {
       
       await ExchangesModel.create({
@@ -36,7 +45,6 @@ router.get("/askCourse/:teacher/:skill", async (req, res, next) => {
     next(error)
   }
 })
-
 
 
 
