@@ -44,6 +44,9 @@ function displayUsers(users) {
       // create one div per skill containing multiple element > skill's infos
       const div = document.createElement("div");
       div.setAttribute("class","user-info"); // seting the skill's id on the tr so we can use it later for deletion
+      console.log("==================1================")      
+      console.log(user.skill)
+      console.log("==================2================")
       const template = `       
             <img src="${user.profilPicture}" alt="${user._id}"></img>
             <p class="resultText">${user.name} can teach you : <b>${user.skills[0].name}</b> !</p>

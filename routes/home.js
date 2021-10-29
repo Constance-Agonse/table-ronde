@@ -11,10 +11,11 @@ router.get("/", (req, res, next) => {
 router.get("/askCourse", async (req, res, next) => {
   try {    
 
-    if(req.session.currentUser){
-
+    if(req.session.currentUser) {
       
       res.redirect("/profile");
+    } else {
+      res.redirect("/auth/signin")
     }
     
   } catch (error) {
@@ -22,7 +23,7 @@ router.get("/askCourse", async (req, res, next) => {
   }
 })
 
-//ASUPPRIMER EN DESSOUS
+//A SUPPRIMER EN DESSOUS *******************************************************
 router.post("/signin", async (req, res, next) => {
   // DO something
   //   res.render("auth/signin.hbs");
@@ -63,7 +64,7 @@ router.post("/signin", async (req, res, next) => {
     next(err);
   }
 });
-
+//ASUPPRIMER AU DESSUS ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 router.get("/search", async function (req, res, next) {
