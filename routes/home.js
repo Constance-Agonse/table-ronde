@@ -8,11 +8,33 @@ router.get("/", (req, res, next) => {
   res.render("./home-search/home");
 });
 
-router.get("/askCourse", async (req, res, next) => {
+router.get("/askCourse/:teacher/:skill", async (req, res, next) => {
   try {    
+    console.log("teacher");
+    console.log(req.params.teacher);
+    console.log("skill");
+    console.log(req.params.skill);
+    console.log(req.session.currentUser._id)
 
+     
+
+    
+    // CREATION de l'exchange
+    clone.teacher = req.params.id;
+    clone.student =  req.session.currentUser._id;
+    clone.skillsName = userToBook.skills[0]._id ;
+    clone.exchangeStatus = "in progress";
+    // fin creation
+
+    
     if(req.session.currentUser) {
       
+      await ExchangesModel.create({
+        teacher : req.params.teacher,
+        student : req.session.currentUser._id,
+        skillsName : req.params.skill,
+        exchangeStatus : "in progress",
+      })
       res.redirect("/profile");
     } else {
       res.redirect("/auth/signin")
@@ -22,6 +44,13 @@ router.get("/askCourse", async (req, res, next) => {
     next(error)
   }
 })
+
+// const courseToRebook = await ExchangesModel.findById(req.params.id);
+//     const {_doc: clone} = {...courseToRebook};
+//     delete clone._id;
+//     clone.exchangeStatus = "in progress"
+//     console.log(clone);
+//     await ExchangesModel.create(clone)
 
 //A SUPPRIMER EN DESSOUS *******************************************************
 router.post("/signin", async (req, res, next) => {

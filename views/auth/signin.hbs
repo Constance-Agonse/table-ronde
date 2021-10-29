@@ -1,4 +1,19 @@
-<div class="sign-in-bg">
+<form method="post" action="/auth/signin" class="form">
+    
+    {{> flashMessage }}
+
+    <label for="email">email</label>
+    <input class="input" type="email" id="email" name="email" value="test@email.com">
+    <label for="password">password</label>
+    <input class="input" type="password" id="password" name="password" value="12345">
+    <button class="btn">signin</button>
+    <p>
+    Don't have an account yet ? <a href="/auth/signup">signup</a>
+</p>
+</form>
+
+
+{{!-- <div class="sign-in-bg">
     <div class="sign-block">
         <div class="sign-in-center">
 
@@ -17,4 +32,4 @@
 
         </div>
     </div>
-</div>
+</div> --}}

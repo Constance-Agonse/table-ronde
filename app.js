@@ -10,9 +10,6 @@ const flash = require("connect-flash");
 const hbs = require("hbs");
 const session = require("express-session");
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var userSkillRouter = require('./routes/profileRoutes/userSkills');
 
 var app = express();
 
@@ -39,7 +36,16 @@ app.use(
     resave: true,
   })
 );
+
+
+// FLASH MESSAGES
+// enable "flash messaging" system
+// flash relies on the express-session mechanism
+app.use(flash());
+
+
 app.use(require("./middlewares/exposeLoginStatus"));
+app.use(require("./middlewares/exposeFlashMessage"));
 // app.use((req, res, next) => {
 //   req.session.currentUser = {
 //     name : "Joe",
@@ -56,10 +62,11 @@ app.use(require("./middlewares/exposeLoginStatus"));
 //   }
 //   next()
 // })
-// app.use(require("./middlewares/exposeFlashMessage"));
 
 
-
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+var userSkillRouter = require('./routes/profileRoutes/userSkills');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const mumuRouter =require('./routes/profileRoutes/mumuRoute')
@@ -85,10 +92,6 @@ app.use(function(req, res, next) {
 });
 
 
-// FLASH MESSAGES
-// enable "flash messaging" system
-// flash relies on the express-session mechanism
-app.use(flash());
 
 
 

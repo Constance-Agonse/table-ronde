@@ -1,4 +1,25 @@
-<div class="sign-in-bg">
+
+<form  id="signup-form" method="post" action="/auth/signup" class="form">
+
+{{> flashMessage }}
+
+    <label for="name">name</label>
+    <input class="input" type="text" id="name" name="name" value="test name">
+    <label for="nickname">nickname</label>
+    <input class="input" type="text" id="nickname" name="nickname" value="nickname">
+    <label for="email">email</label>
+    <input class="input" type="email" id="email" name="email" value="test@email.com">
+    <label for="password">password</label>
+    <input class="input" type="password" id="password" name="password" value="12345">
+    <p id="hidden-sentence"  > Must  at least contains the last 5 digits of Pi, your Blood-type </p>
+    <button class="btn">signup</button>
+    <p>
+    Already got an account ? <a href="/auth/signin">signin</a>
+</p>
+</form>
+
+
+{{!-- <div class="sign-in-bg">
     <div class="sign-block">
         <form method="post" action="/auth/signup" class="form">
 
@@ -17,4 +38,4 @@
             <a class="sign-in-up-btn sign-in-btn" href="/auth/signin">Sign in!</a>
         </p>
     </div>
-</div>
+</div> --}}
