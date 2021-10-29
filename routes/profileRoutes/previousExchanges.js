@@ -3,13 +3,14 @@ const router = require("express").Router(); //besoin meme si il y a celui d'en h
 const UsersModel = require("./../../models/Users");
 const SkillsModel = require("./../../models/Skills");
 const ExchangesModel = require("./../../models/Exchanges");
+const protectRoute = require("./../../middlewares/protectRoute")
 
 // const buttonRebook = document.getElementsByClassName("rebooker"); // es ce que l'on sélectionne que le button
 
 console.log("hey dream team");
 
 // On cherche a récupérer l'id du profil de l'individu, pour récupérer tout ces échanges (ATTENTION IL FAUDRA ENSUITE SELECTIONNER UNIQUEMENT LES ECHANGES AYANT LE STATUT DE TERMINE)
-router.get("/profile/:id/previousCourses", async (req, res, next) => {
+router.get("/profile/:id/previousCourses", protectRoute, async (req, res, next) => {
   try {
     const exchanges = await ExchangesModel.findById(req.params.id);
     console.log(exchanges);
@@ -20,7 +21,7 @@ router.get("/profile/:id/previousCourses", async (req, res, next) => {
   }
 });
 
-router.get("/profile/previousCourses", async (req, res, next) => {
+router.get("/profile/previousCourses",protectRoute, async (req, res, next) => {
   try {
     const user = await UsersModel.findById(req.session.currentUser._id);
     // on récupère les datas quand il est prof
@@ -43,7 +44,7 @@ router.get("/profile/previousCourses", async (req, res, next) => {
 });
 
 // A METTRE DANS LE ONCLICK ou alors utiliser un lien qui renvoie vers la page profile?
-router.get("/profile/rebook/:id", async (req, res, next) => {
+router.get("/profile/rebook/:id", protectRoute, async (req, res, next) => {
   // Comment faire pour garder toutes les memes infos sauf l'id et le statut?
   try {
     const courseToRebook = await ExchangesModel.findById(req.params.id);

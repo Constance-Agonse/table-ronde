@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const UserModel = require('./../../models/Users');
 const ExchangesModel = require("./../../models/Exchanges");
+const protectRoute = require("./../../middlewares/protectRoute")
 
 
-router.get('/', async (req,res,next) => {
+router.get('/',protectRoute, async (req,res,next) => {
 
     console.log(res.locals.isLoggedIn);
     try {
@@ -24,7 +25,7 @@ router.get('/', async (req,res,next) => {
 
 
 
-router.get('/finished/lessontaken/:id', async (req,res,next) => {
+router.get('/finished/lessontaken/:id',protectRoute, async (req,res,next) => {
     try {
         console.log("===^^^^^^^^====");
         console.log(req.params.id);
@@ -40,7 +41,7 @@ router.get('/finished/lessontaken/:id', async (req,res,next) => {
 })
 
 
-router.get('/cancel/lessontaken/:id', async (req,res,next) => {
+router.get('/cancel/lessontaken/:id',protectRoute, async (req,res,next) => {
     try {
         const updateStatus =  await ExchangesModel.findByIdAndUpdate(req.params.id, { exchangeStatus : "denied" }, { new: true})
          res.redirect("/profile")
@@ -50,7 +51,7 @@ router.get('/cancel/lessontaken/:id', async (req,res,next) => {
     }
 })
 
-router.get('/approve/lessongiven/:id', async (req,res,next) => {
+router.get('/approve/lessongiven/:id',protectRoute, async (req,res,next) => {
     try {
         console.log("===^^^^^^^^====");
         console.log(req.params.id);
@@ -65,7 +66,7 @@ router.get('/approve/lessongiven/:id', async (req,res,next) => {
     }
 })
 
-router.get('/cancel/lessongiven/:id', async (req,res,next) => {
+router.get('/cancel/lessongiven/:id',protectRoute, async (req,res,next) => {
     try {
         const updateStatus =  await ExchangesModel.findByIdAndUpdate(req.params.id, { exchangeStatus : "denied" }, { new: true})
          res.redirect("/profile")  
