@@ -1,10 +1,12 @@
 <div id="profile-nav-bar">
     {{> profileNavBar}}
-    {{> profileLoginNavBar}}
 </div>
 
 
 <div class="profile-right-block">
+    <div class="partial-login-logout">
+     {{> profileLoginNavBar}}
+     </div>
     <form method="post" action="/profile/skills/create" class="form">
         <h2>Add a new skill</h2>
         <label class="label">Skill: </label>

@@ -1,31 +1,63 @@
 <div id="profile-nav-bar">
     {{> profileNavBar}}
-    {{> profileLoginNavBar}}
 </div>
 
 
 <div class="profile-right-block">
-<div class="skills-block">
+    <div class="partial-login-logout">
+     {{> profileLoginNavBar}}
+     </div>
+    <div class="skills-block">
+        {{#unless user.skills}}
+        <p>No skills yet?</p>
+        <p>Add your skills to join the community!</p>
+        {{else}}
 
-    <ul>
+
         {{#each user.skills}}
-        <li>
-            <p>{{this.name}}</p>
-            <p>{{this.level}}</p>
-            <p>{{this.category}}</p>
-            <a href="skills/delete/{{this._id}}">Delete</a>
-            <a href="skills/edit/{{this._id}}">Edit</a>
-        </li>
+        <table class="course-table">
+            <thead class="course-table-head">
+                <tr class="course-table-line">
+                    <th>Skill</th>
+                    <th>Level</th>
+                    <th>Category</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class="course-table-line">
+                    <td>
+                        <p>{{this.name}} </p>
+                    </td>
+                    <td>
+                        <p>{{this.level}}</p>
+                    </td>
+                    <td>
+                        <p>{{this.category}}</p>
+                    </td>
+                    <td>
+                        <a href="skills/delete/{{this._id}}"><img width="28" src="/img/icons/delete.png"
+                                alt="delete"></a>
+                    </td>
+                    <td>
+                        <a href="skills/edit/{{this._id}}"><img width="28" src="/img/icons/pen.png" alt="edit"></a>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
         {{/each}}
-    </ul>
 
 
-    {{#unless user.skills}}
-    <p>No skills yet?</p>
-    {{/unless}}
-    <p>Add your skills to join the community!</p>
-    <a href="skills/create">Add skill</a>
-</div>
+
+
+
+        {{/unless}}
+
+        <a class="add-a-skill-btn" href="skills/create">Add skill</a>
+    </div>
 </div>
 
 {{!-- inserer les liens pour delete and edit + add skill --}}

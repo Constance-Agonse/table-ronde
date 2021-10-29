@@ -21,40 +21,51 @@
     --orange: #F55721;
     --jaune: #FFBC00;
 }
+
 /* Partie provisoire css hugo home************************************************/
-.btn-book-course  {
+.btn-book-course {
     padding: 12px;
     background-color: var(--bleu);
     color: white;
     border-radius: 24px;
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
+    
+}
+
+.btn-book-course:hover{
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 70, 130, 1);
 }
 
 
 #search-level {
-    width : 150px;
-    height : 40px;
+    width: 150px;
+    height: 40px;
     border-radius: 24px;
 }
 
-h1 {
+#title-box{
     background-color: rgba(255, 255, 255, 0.7);
-    padding: 10px;
+    padding: 25px 53px;
     margin: 50px;
     border-radius: 24px;
+}
+
+#title-box h1 {    
     color: var(--bleu);
     font-size: 3em;
+    font-weight: bold;
 }
 
 #home-global-container {
     display: flex;
     flex-direction: column;
-    align-items: center;  
+    align-items: center;
     width: 100%;
     background-image: url('../img/backgrounds/bg2people.png');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;  
+    background-position: center;
 }
 
 #search-general {
@@ -66,37 +77,37 @@ h1 {
     margin-bottom: 25px;
 }
 
-#zbeulRecherche{
+#zbeulRecherche {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
 }
 
-#zbeulRecherche p{
+#zbeulRecherche p {
     font-size: 1.3em;
     font-weight: bold;
 }
 
-#zbeulRecherche *{
+#zbeulRecherche * {
     padding: 0px 25px;
 }
 
-#search-skill{
-    width : 200px;
+#search-skill {
+    width: 200px;
     border-radius: 24px;
-    padding : 10px;
+    padding: 10px;
 }
 
-#home-search-result { 
+#home-search-result {
     display: flex;
     flex-direction: column;
 }
 
 .user-info img {
     border-radius: 50%;
-    width: 70px ;
-    height: 70px ;
+    width: 70px;
+    height: 70px;
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
 }
 
@@ -109,7 +120,11 @@ h1 {
     justify-content: space-around;
     align-items: center;
     padding: 25px;
-    margin : 25px;
+    margin: 25px;
+}
+
+.user-info b {
+    font-weight: bold;
 }
 
 /* PArtie provisoire css hugo home********************************************/
@@ -123,20 +138,29 @@ h1 {
     display: flex;
 }
 
-.profile-nav-bar{
+.profile-nav-bar {
     width: 300px;
     height: 100vh;
+
 }
 
-.profile-right-block{
+.profile-right-block {
     width: 100%;
     background-image: url('../img/backgrounds/bgsharing.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
 }
 
-.sub-title{
+.partial-login-logout {
+    padding: 18px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sub-title {
     font-size: 30px;
     margin-bottom: 20px;
 
@@ -144,41 +168,42 @@ h1 {
 
 /* CURRENT EXCHANGES/PROFILE  */
 
-.block-current-exchanges-container{
+.block-current-exchanges-container {
     max-width: 800px;
-    margin:auto;
-      
+    margin: auto;
+
 
 }
 
 
-.courses-taken{
-max-width: 100%;
-background-color: var(--orange);
-border-radius: 24px;
-padding: 24px;
-margin-top: 100px;
-margin-bottom: 50px;
-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+.courses-taken {
+    max-width: 100%;
+    background-color: var(--orange);
+    border-radius: 24px;
+    padding: 24px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.courses-given{
-background-color: var(--rose);
-border-radius: 24px;
-padding: 24px;
-margin-bottom: 100px;
-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+.courses-given {
+    background-color: var(--rose);
+    border-radius: 24px;
+    padding: 24px;
+    margin-bottom: 100px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.course-table-head{
-font-weight: bold;
+.course-table-head {
+    font-weight: bold;
 }
-.course-table{
+
+.course-table {
     width: 100%;
 
 }
 
-.course-button{
+.course-button {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 18px;
     padding: 12px;
@@ -189,22 +214,24 @@ font-weight: bold;
     transition: all ease-in-out .1s;
 }
 
-.course-button:hover{
+.course-button:hover {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     background-color: rgba(255, 255, 255, 0.12);
 }
-.course-table-line{
+
+.course-table-line {
     line-height: 3.5;
 }
+
 /* MY SKILLS */
 
-.skills-block{
+.skills-block {
     max-width: 800px;
-    margin:auto;
+    margin: auto;
     background-color: var(--rose);
     border-radius: 24px;
     padding: 24px;
     margin-top: 100px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); 
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
 }
