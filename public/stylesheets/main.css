@@ -405,3 +405,11 @@
 .boldy{
 font-weight: bold;
 }
+
+
+.hover-style:hover{
+border: 1px grey solid;
+color: grey;
+border-radius: 12px;
+padding: 12px;
+}
