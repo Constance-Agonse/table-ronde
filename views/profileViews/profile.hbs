@@ -20,7 +20,7 @@
                     <thead class="course-table-head">
                         <tr class="course-table-line">
                             <th>Activity</th>
-                            <th>Teacher</th>
+                            <th>Student</th>
                             <th>Details</th>
                             <th>Status</th>
                             <th></th>
@@ -34,7 +34,7 @@
                                 <p class="activity">{{this.skillsName.name}} </p>
                             </td>
                             <td>
-                                <p class="teacher">{{this.teacher.name}}</p>
+                                <p class="teacher">{{this.student.name}}</p>
                             </td>
                             <td>
                                 <p class="details">{{this.phone}}</p>
@@ -42,8 +42,7 @@
                             <td>
                                 <p class="Status">{{this.exchangeStatus}} </p>
                             </td>
-                            <td><a class="course-button" href="/profile/finished/lessontaken/{{this._id}}">Lesson
-                                    done</a></td>
+                            <td><a class="course-button" href="/profile/approve/lessongiven/{{this._id}}">Approve this lesson</a></td>
                             <td><a class="course-button" href="/profile/cancel/lessontaken/{{this._id}}">Cancel
                                     lesson</a></td>
                         </tr>
@@ -74,7 +73,7 @@
                     <thead class="course-table-head">
                         <tr class="course-table-line">
                             <th>Activity</th>
-                            <th>Student</th>
+                            <th>Teacher</th>
                             <th>Details</th>
                             <th>Status</th>
                             <th></th>
@@ -96,8 +95,7 @@
                             <td>
                                 <p class="Status">{{this.exchangeStatus}} </p>
                             </td>
-                            <td><a class="course-button" href="/profile/approve/lessongiven/{{this._id}}">Approve this
-                                    leson</a></td>
+                            <td><a class="course-button" href="/profile/finished/lessontaken/{{this._id}}">Lesson done</a></td>
                             <td><a class="course-button" href="/profile/cancel/lessongiven/{{this._id}}">Cancel
                                     lesson</a></td>
                         </tr>

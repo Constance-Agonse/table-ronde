@@ -11,7 +11,7 @@ router.get('/',protectRoute, async (req,res,next) => {
     try {
         console.log(req.session.currentUser._id);
         const user = await UserModel.findById(req.session.currentUser._id);
-        const courseTaken =  await ExchangesModel.find({ teacher : req.session.currentUser._id, exchangeStatus : { $ne : "done" } }).populate("teacher").populate("skillsName")
+        const courseTaken =  await ExchangesModel.find({ teacher : req.session.currentUser._id, exchangeStatus : { $ne : "done" } }).populate("student").populate("skillsName")
         const courseGiven =  await ExchangesModel.find({ student : req.session.currentUser._id, exchangeStatus : { $ne : "done" } }).populate("teacher").populate("skillsName")
         // console.log(courseTaken);
 
