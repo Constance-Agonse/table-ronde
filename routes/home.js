@@ -16,17 +16,6 @@ router.get("/askCourse/:teacher/:skill", async (req, res, next) => {
     console.log("skill");
     console.log(req.params.skill);
     console.log(req.session.currentUser._id)
-
-     
-
-    
-    // CREATION de l'exchange
-    clone.teacher = req.params.id;
-    clone.student =  req.session.currentUser._id;
-    clone.skillsName = userToBook.skills[0]._id ;
-    clone.exchangeStatus = "in progress";
-    // fin creation
-
     
     if(req.session.currentUser) {
       
