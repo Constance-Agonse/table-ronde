@@ -19,7 +19,7 @@
 </form> --}}
 
 
-<div class="sign-in-bg">
+{{!-- <div class="sign-in-bg">
     <div class="sign-block">
         <form method="post" action="/auth/signup" class="form">
 
@@ -39,6 +39,34 @@
             Already got an account ? <br>
             <a class="sign-in-up-btn sign-in-btn" href="/auth/signin">Sign in!</a>
         </p>
+    </div>
+    
+</div> --}}
+
+<div class="sign-in-bg">
+    <div class="sign-block">
+        <form method="post" action="/auth/signup" class="form-sign-up">
+            <div>
+                <label for="name">Name: </label> <br>
+                <label for="nickname">Nickname: </label> <br>
+                <label for="email">Email: </label> <br>
+                <label for=" phone">Phone: </label> <br>
+                <label for="password">Password: </label> <br>
+
+            </div>
+            <div>
+                <input class="input-skill-edit-signup" type="text" id="name" name="name" value="test name">  <br>
+                <input class="input-skill-edit-signup" type="text" id="nickname" name="nickname" value="nickname">  <br>
+                <input class="input-skill-edit-signup" type="email" id="email" name="email" value="test@email.com">  <br>
+                <input class="input-skill-edit-signup" type=" phone" id="phone" name=" phone" value="06 77 66 88 54">  <br>
+                <input class="input-skill-edit-signup" type="password" id="password" name="password" value="12345"> <br>
+            </div>                         
+        </form>
+        <button class="button-action-sign-up">Create my account!</button>
+        <p>
+            Already got an account ? <br>            
+        </p>
+        <a class="sign-in-up-btn sign-in-btn" href="/auth/signin">Sign in!</a>
     </div>
     
 </div>
