@@ -1,8 +1,8 @@
-# Table Ronde - A web platform for skill sharing project
+# Table Ronde - A web platform for skill sharing
 
 ## Introduction
 The goal of the app is to allow users to learn from Table Ronde's comunity and teach their skills.
-To avoid any abuse, the official money of exchange is time. So by teaching a 1 hour lesson you will be able to learn from an other user during 1 hour.
+To avoid any abuse, the official money of exchange is time. By teaching a 1 hour lesson you will be able to learn from an other user during 1 hour.
 
 ## Platform structure
 
