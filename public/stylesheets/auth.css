@@ -11,3 +11,50 @@
     visibility: hidden;
     background-color: white;
 }
+
+   /* Floating column for labels: 25% width */
+   .col25 {
+    width: 25%;
+    margin: auto;
+    
+ }
+
+ /* Floating column for inputs: 75% width */
+ .col75 {
+    float: right;
+    width: 45% ;
+    border-radius: 24px;
+    padding: 10px;
+    border: none;
+}
+
+.sign-text-block{
+    margin-right: 24px;
+    margin-left: 24px;
+}
+
+.signup-block{
+    width: 500px;
+    margin: auto;
+    background-color: var(--vert);
+    opacity: 0.85;
+    border-radius: 24px;
+    padding: 24px;
+    margin-top: 200px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    line-height: 2.5;
+}
+
+.flex-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-label{
+    min-width: 100%;
+}
+
+.center-text{
+    text-align: center;
+}

@@ -20,25 +20,35 @@
 
 
 <div class="sign-in-bg">
-    <div class="sign-block">
-        <form method="post" action="/auth/signup" class="form">
+    <div class="signup-block">
+        <div class="sign-text-block">
+
+        
+        <form method="post" action="/auth/signup" class="form flex-form">
 {{> flashMessage }}
-            <label for="name">Name: </label>
-            <input class="input-skill-edit" type="text" id="name" name="name" value="test name"> <br>
-            <label for="nickname">Nickname: </label>
-            <input class="input-skill-edit" type="text" id="nickname" name="nickname" value="nickname"> <br>
-            <label for="email">Email: </label>
-            <input class="input-skill-edit" type="email" id="email" name="email" value="test@email.com"> <br>
-            <label for=" phone">Phone: </label>
-            <input class="input-skill-edit" type=" phone" id=" phone" name=" phone" value="06 77 66 88 54"> <br>
-            <label for="password">Password: </label>
-            <input class="input-skill-edit" type="password" id="password" name="password" value="12345"> <br>
+        <div class="input-label">
+            <label for="name" class="col25">Name: </label>
+            <input class="col75" type="text" id="name" name="name" value="test name"> <br>
+            <label for="nickname" class="col25">Nickname: </label>
+            <input class="col75" type="text" id="nickname" name="nickname" value="nickname"> <br>
+            <label for="email" class="col25">Email: </label>
+            <input class="col75" type="email" id="email" name="email" value="test@email.com"> <br>
+            <label for=" phone" class="col25">Phone: </label>
+            <input class="col75" type=" phone" id=" phone" name=" phone" value="06 77 66 88 54"> <br>
+            <label for="password" class="col25">Password: </label>
+            <input class="col75" type="password" id="password" name="password" value="12345"> <br>
+        </div>
             <button class="button-action-sign">Create my account!</button>
         </form>
-        <p>
+    
+        <p class="center-text">
             Already got an account ? <br>
             <a class="sign-in-up-btn sign-in-btn" href="/auth/signin">Sign in!</a>
         </p>
+        </div>
     </div>
     
 </div>
+
+
+
