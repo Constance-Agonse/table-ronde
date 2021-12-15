@@ -22,7 +22,7 @@
     --jaune: #FFBC00;
 }
 
-/* Partie provisoire css hugo home************************************************/
+/* Partie provisoire css home************************************************/
 .btn-book-course {
     padding: 12px;
     background-color: var(--bleu);
@@ -146,7 +146,7 @@
 
 
 
-/* PArtie provisoire css hugo home********************************************/
+/* PArtie provisoire css home********************************************/
 
 .page-container {
     font-family: Satoshi;
@@ -338,6 +338,10 @@
     flex-direction: column;
     align-items: center;
 }
+
+ #sign-up-info-block{
+     display: flex;
+ }
 
 .input-skill-edit-signup{
     width: 200px;

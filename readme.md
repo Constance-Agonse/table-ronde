@@ -6,11 +6,17 @@ To avoid any abuse, the official money of exchange is time. By teaching a 1 hour
 
 ## Platform structure
 
-The platform is composed of a sign-in / sign-up pages, a home page where you can search for skills, a profile page where you can find your skill, you account details, your current excange and your previous one.
+The platform is composed of : 
+* Sign-in / sign-up pages
+* A home page where you can search for skills
+* A profile page where you can find your skills
+* Your account details
+* Your current exchange and your previous ones
+
 Once an exchange is done you have the possibility to rebook it.
 
 ### Technologies
-The platform have been developed with :
+The platform have been developed in 4 days with :
 
 Front-end
 * Handlebars
@@ -23,6 +29,6 @@ Database
 * MongoDB
 
 ## Link to the demo
-Hope you will enjoy the lessons proposed, to be fair we don't have that much user for now...
+Hope you will enjoy the lessons proposed, to be fair we don't have that much user for now, happy to count you in !
 
 [°TableRonde°](https://table-ronde.herokuapp.com/auth/signin)
