@@ -1,24 +1,3 @@
-
-{{!-- <form  id="signup-form" method="post" action="/auth/signup" class="form">
-
-{{> flashMessage }}
-
-    <label for="name">name</label>
-    <input class="input" type="text" id="name" name="name" value="Mr.Pink">
-    <label for="nickname">nickname</label>
-    <input class="input" type="text" id="nickname" name="nickname" value="nickname">
-    <label for="email">email</label>
-    <input class="input" type="email" id="email" name="email" value="test@email.com">
-    <label for="password">password</label>
-    <input class="input" type="password" id="password" name="password" value="12345">
-    <p id="hidden-sentence"  > Must  at least contains the last 5 digits of Pi, your Blood-type </p>
-    <button class="btn">signup</button>
-    <p>
-    Already got an account ? <a href="/auth/signin">signin</a>
-</p>
-</form> --}}
-
-
 <div class="sign-in-bg">
     <div class="signup-block">
         <div class="sign-text-block">
@@ -26,7 +5,7 @@
         
         <form method="post" action="/auth/signup" class="form flex-form">
 {{> flashMessage }}
-        <div class="input-label">
+        <div class="input-label sign-up-info-block">
             <label for="name" class="col25">Name: </label>
             <input class="col75" type="text" id="name" name="name" value="test name"> <br>
             <label for="nickname" class="col25">Nickname: </label>
@@ -48,32 +27,9 @@
         </div>
     </div>
     
-</div> --}}
+</div> 
 
-<div class="sign-in-bg">
-    <div class="sign-block">
-        <form method="post" action="/auth/signup" class="form-sign-up">
-            <div id="sign-up-info-block">
-                <label for="name">Name: </label> 
-                <input class="input-skill-edit-signup" type="text" id="name" name="name" value="test name">  <br>
-                <label for="nickname">Nickname: </label>                 
-                <input class="input-skill-edit-signup" type="text" id="nickname" name="nickname" value="nickname">  <br>
-                <label for="email">Email: </label>                 
-                <input class="input-skill-edit-signup" type="email" id="email" name="email" value="test@email.com">  <br>
-                <label for=" phone">Phone: </label>                 
-                <input class="input-skill-edit-signup" type=" phone" id="phone" name=" phone" value="06 77 66 88 54">  <br>
-                <label for="password">Password: </label>                 
-                <input class="input-skill-edit-signup" type="password" id="password" name="password" value="12345"> <br>
-            </div>                         
-        </form>
-        <button class="button-action-sign-up">Create my account!</button>
-        <p>
-            Already got an account ? <br>            
-        </p>
-        <a class="sign-in-up-btn sign-in-btn" href="/auth/signin">Sign in!</a>
-    </div>
-    
-</div>
+
 
 
 
