@@ -22,7 +22,7 @@
     --jaune: #FFBC00;
 }
 
-/* Partie provisoire css hugo home************************************************/
+/* Partie provisoire css home************************************************/
 .btn-book-course {
     padding: 12px;
     background-color: var(--bleu);
@@ -146,7 +146,7 @@
 
 
 
-/* PArtie provisoire css hugo home********************************************/
+/* PArtie provisoire css home********************************************/
 
 .page-container {
     font-family: Satoshi;
@@ -323,7 +323,7 @@
     background-color: rgba(	245,87,33, 0.75);
 }
 
-
+/********************************************/
 .sign-block {
     width: 800px;
     margin: auto;
@@ -334,6 +334,28 @@
     margin-top: 200px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     line-height: 2.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ #sign-up-info-block{
+     display: flex;
+ }
+
+.input-skill-edit-signup{
+    width: 200px;
+    border-radius: 24px;
+    padding: 10px;
+    border: none;
+}
+
+.form-sign-up{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding: 10px;
 }
 
 .sign-in-bg {
@@ -342,6 +364,24 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.button-action-sign-up{
+    font-family: Satoshi;
+    font-size: 18px;
+    border-radius: 24px;
+    height: 40px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: var(--orange);
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 1s;
+    transition: all ease-in-out .1s;
+    border: none;
 }
 
 .sign-in-up-btn {
@@ -402,6 +442,7 @@
     background-color: rgba(	245,87,33, 0.75);
 }
 
+/********************************************/
 
 .boldy{
 font-weight: bold;
